@@ -6,18 +6,18 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private CapsuleCollider2D col;
     [Header("Movement")]
-    public float _moveSpeed = 5f;
-    public float _horizontalMovement;
+    public float moveSpeed = 5f;
+    public float horizontalMovement;
 
     [Header("Jump")]
-    public float _jumpForce = 15f;
+    public float jumpForce = 15f;
     public float coyoteTime = 0.15f;
 
 
     [Header("Ground Check")]
-    public Transform _groundCheck;
-    public Vector2 _groundCheckRadius = new Vector2(0.5f, 0.1f);
-    public LayerMask _groundLayer;
+    public Transform groundCheck;
+    public Vector2 groundCheckRadius = new Vector2(0.5f, 0.1f);
+    public LayerMask groundLayer;
 
     [Header("Gravity")]
     public float baseGravity = 2f;
@@ -25,12 +25,12 @@ public class PlayerMovement : MonoBehaviour
     public float fallSpeedMultiplier = 1f;
 
     [Header("Climbing")]
-    public float _climbSpeed = 3f;
-    public float _verticalMovement;
-    public Transform _wallCheckRight;
-    public Transform _wallCheckLeft;
-    public Vector2 _wallCheckRadius = new Vector2(0.1f, 0.5f);
-    public LayerMask _climbableLayer;
+    public float climbSpeed = 3f;
+    public float verticalMovement;
+    public Transform wallCheckRight;
+    public Transform wallCheckLeft;
+    public Vector2 wallCheckRadius = new Vector2(0.1f, 0.5f);
+    public LayerMask climbableLayer;
     private bool isClimbing = false;
 
     private void Awake()
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = new Vector2(_horizontalMovement * _moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         
         Gravity();
         if (!IsClimbable())
@@ -67,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 movementInput = context.ReadValue<Vector2>();
-        _horizontalMovement = movementInput.x;
-        _verticalMovement = movementInput.y;
+        horizontalMovement = movementInput.x;
+        verticalMovement = movementInput.y;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         if (context.performed)
         {
             isClimbing = false;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, _jumpForce);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
 
     }
@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isClimbing = true;
             rb.gravityScale = 0f;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, _verticalMovement * _climbSpeed);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalMovement * climbSpeed);
         }
         else if (context.canceled)
         {
@@ -111,8 +111,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsClimbable()
     {
-        if (Physics2D.OverlapBox(_wallCheckRight.position, _wallCheckRadius, 0f, _climbableLayer) ||
-            Physics2D.OverlapBox(_wallCheckLeft.position, _wallCheckRadius, 0f, _climbableLayer))
+        if (Physics2D.OverlapBox(wallCheckRight.position, wallCheckRadius, 0f, climbableLayer) ||
+            Physics2D.OverlapBox(wallCheckLeft.position, wallCheckRadius, 0f, climbableLayer))
         {
             return true;
         }
@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded()
     {
         float lastGrounded = 0f;
-        if (Physics2D.OverlapBox(_groundCheck.position, _groundCheckRadius, 0f, _groundLayer))
+        if (Physics2D.OverlapBox(groundCheck.position, groundCheckRadius, 0f, groundLayer))
         {
             lastGrounded = Time.time;
         }
@@ -134,8 +134,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawCube(_groundCheck.position, _groundCheckRadius);
-        Gizmos.DrawCube(_wallCheckRight.position, _wallCheckRadius);
-        Gizmos.DrawCube(_wallCheckLeft.position, _wallCheckRadius);
+        Gizmos.DrawCube(groundCheck.position, groundCheckRadius);
+        Gizmos.DrawCube(wallCheckRight.position, wallCheckRadius);
+        Gizmos.DrawCube(wallCheckLeft.position, wallCheckRadius);
     }
 }
