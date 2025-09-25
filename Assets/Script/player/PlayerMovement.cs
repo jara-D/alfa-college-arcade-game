@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     [Header("Gravity")]
-    public float baseGravity = 2f;
+    public float baseGravity;
     public float maxFallSpeed = 12f;
     public float fallSpeedMultiplier = 1f;
 
