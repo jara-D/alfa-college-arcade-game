@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Gravity")]
     public float baseGravity;
-    public float maxFallSpeed = 12f;
-    public float fallSpeedMultiplier = 1f;
+    public float maxFallSpeed;
+    public float fallSpeedMultiplier;
 
     [Header("Climbing")]
     public float climbSpeed = 5f;

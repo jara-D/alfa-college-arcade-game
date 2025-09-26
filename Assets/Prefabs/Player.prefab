@@ -563,8 +563,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   baseGravity: 2.5
-  maxFallSpeed: 12
-  fallSpeedMultiplier: 1
+  maxFallSpeed: 30
+  fallSpeedMultiplier: 1.5
   climbSpeed: 5
   wallCheckRight: {fileID: 7756887975442062180}
   wallCheckLeft: {fileID: 5840457396360921204}
