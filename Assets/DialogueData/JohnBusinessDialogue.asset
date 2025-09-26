@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd8006031202b946afb2d2e35ddac9e, type: 3}
+  m_Name: JohnBusinessDialogue
+  m_EditorClassIdentifier: 
+  dialogueName: John Business Dialogue
+  description: BUSINESS!!!
+  dialogueNodes:
+  - characterName: John Business
+    dialogueText: Hello good sir, quite the climb huh?
+    choices:
+    - choiceText: Indeed, what are you doing here?
+      nextNodeIndex: 2
+    - choiceText: JOHN BUSINESS?!?!?!!?!?
+      nextNodeIndex: 3
+  - characterName: John Business
+    dialogueText: Business!
+    choices: []
+  - characterName: John Business
+    dialogueText: Business of course!
+    choices:
+    - choiceText: Fair enough
+      nextNodeIndex: 1
+  - characterName: John Business
+    dialogueText: '''Tis i, John Business! I am here to conduct business!'
+    choices:
+    - choiceText: Such as?
+      nextNodeIndex: 2
+    - choiceText: HELL YEA
+      nextNodeIndex: 1
