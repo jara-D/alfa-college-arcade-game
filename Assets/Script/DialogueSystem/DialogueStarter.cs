@@ -8,9 +8,9 @@ public class DialogueStarter : MonoBehaviour
     public DialogueManager dialogueManager;
     
     [Header("UI Panels")]
-    public GameObject panel1;
-    public GameObject panel2;
+    public GameObject DialogueTextContainer;
     public GameObject choicesContainer;
+    public GameObject xButton;
     
     [Header("Interaction Settings")]
     public float interactionRange = 2f;
@@ -88,19 +88,19 @@ public class DialogueStarter : MonoBehaviour
 
     private void ActivatePanels()
     {
-        if (panel1 != null)
+        if (DialogueTextContainer != null)
         {
-            panel1.SetActive(true);
-        }
-
-        if (panel2 != null)
-        {
-            panel2.SetActive(true);
+            DialogueTextContainer.SetActive(true);
         }
 
         if (choicesContainer != null)
         {
             choicesContainer.SetActive(true);
+        }
+        
+        if (xButton != null)
+        {
+            xButton.SetActive(true);
         }
     }
 

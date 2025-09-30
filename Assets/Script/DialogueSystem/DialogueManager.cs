@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 [System.Serializable]
 public class DialogueNode
@@ -21,12 +20,12 @@ public class DialogueChoice
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI dialogueText;
-    public TextMeshProUGUI characterNameText;
+    public Text dialogueText;
+    public Text characterNameText;
     public GameObject choicesContainer;
     public Button choiceButtonPrefab;
-    public GameObject panel1;
-    public GameObject panel2;
+    public GameObject DialogueTextContainer;
+    public GameObject xButton;
     
     [Header("Typewriter Settings")]
     [Tooltip("Speed of the typewriter effect (characters per second)")]
@@ -107,7 +106,7 @@ public class DialogueManager : MonoBehaviour
         foreach (var choice in node.choices)
         {
             Button choiceButton = Instantiate(choiceButtonPrefab, choicesContainer.transform);
-            choiceButton.GetComponentInChildren<TextMeshProUGUI>().text = choice.choiceText;
+            choiceButton.GetComponentInChildren<Text>().text = choice.choiceText;
             choiceButton.onClick.AddListener(() => SelectChoice(choice.nextNodeIndex));
         }
 
@@ -130,7 +129,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void EndDialogue()
+    public void EndDialogue()
     {
         // Stop typewriter coroutine if running
         if (typewriterCoroutine != null)
@@ -144,14 +143,14 @@ public class DialogueManager : MonoBehaviour
         characterNameText.text = "";
         choicesContainer.SetActive(false);
 
-        if (panel1 != null)
+        if (DialogueTextContainer != null)
         {
-            panel1.SetActive(false);
+            DialogueTextContainer.SetActive(false);
         }
-
-        if (panel2 != null)
+        
+        if (xButton != null)
         {
-            panel2.SetActive(false);
+            xButton.SetActive(false);
         }
     }
 

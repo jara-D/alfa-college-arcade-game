@@ -23,7 +23,7 @@ MonoBehaviour:
     - choiceText: JOHN BUSINESS?!?!?!!?!?
       nextNodeIndex: 3
   - characterName: John Business
-    dialogueText: Business!
+    dialogueText: $$$ Business! $$$
     choices: []
   - characterName: John Business
     dialogueText: Business of course!
