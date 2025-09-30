@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public Transform RespawnPoint;
     public int maxHealth = 10;
     [SerializeField] private int currentHealth;
 
@@ -40,12 +41,14 @@ public class Health : MonoBehaviour
             currentHealth = maxHealth;
         }
     }
-
+    // On death, run Die()
     private void Die()
     {
         if (gameObject.CompareTag("Player"))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex); // On death, reset scene
+            //If the player dies, set the player gameObject to the RespawnPoint location
+            transform.position = RespawnPoint.position;
             return;
         }
     }
