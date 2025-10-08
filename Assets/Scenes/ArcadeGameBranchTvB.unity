@@ -1670,6 +1670,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5484316785877869598, guid: 897b8cce94c30addf9907b2aa4d0cad2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5484316785877869598, guid: 897b8cce94c30addf9907b2aa4d0cad2, type: 3}
       propertyPath: m_Size.y
       value: 1.25
       objectReference: {fileID: 0}
