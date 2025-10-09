@@ -44,10 +44,16 @@ public class PlayerController : MonoBehaviour
     public LayerMask climbableLayer;
     private bool isClimbing = false;
 
+    [Header("Knockback")]
+    private Knockback knockback;
+
+    
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        knockback = GetComponent<Knockback>();
     }
 
     // Update is called once per frame
@@ -55,6 +61,10 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
 
+        if (!knockback.IsBeingKnockedBack)
+        {
+            
+        }
         Gravity();
         if (!IsClimbable())
         {
