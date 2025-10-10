@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     public Vector2 groundCheckRadius = new Vector2(0.5f, 0.1f);
     public LayerMask groundLayer;
 
+    public Vector3 lastGroundedPosition;    //tracks the vector of the last location the player was grounded
+    public bool realGrounded;               //Grounded bool without coyote time
+
     [Header("Gravity")]
     public float baseGravity;
     public float maxFallSpeed;
@@ -58,6 +61,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
+        realGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckRadius, 0f, groundLayer);
+
         if (isDashing) return;
 
 
@@ -106,6 +112,11 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        //Update last grounded position if the player is really grounded
+        if (realGrounded)
+        {
+            lastGroundedPosition = transform.position;
+        }
         Vector2 movementInput = context.ReadValue<Vector2>();
         horizontalMovement = movementInput.x;
         verticalMovement = movementInput.y;
@@ -253,6 +264,13 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Player triggered with " + collision.name);
+    }
+
+    // Respawn at the last grounded position
+    public void LastGroundedRespawn()
+    {
+        transform.position = new Vector3(lastGroundedPosition.x, lastGroundedPosition.y, transform.position.z);
+
     }
 
 }

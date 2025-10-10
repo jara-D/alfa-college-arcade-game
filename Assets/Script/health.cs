@@ -5,7 +5,7 @@ public class Health : MonoBehaviour
 {
     public Transform RespawnPoint;
     public int maxHealth = 10;
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
 
     private bool isInvincible = false;
     public float invincibilityDuration = 1f;
