@@ -335,11 +335,67 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player triggered with " + collision.name);
     }
 
-    // Respawn at the last grounded position
+    public void ResetAnimations()
+    {
+        if (animator == null) return;
+        
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isJumping", false);
+        animator.SetBool("isFalling", false);
+        animator.SetBool("isClimbing", false);
+        animator.SetBool("isDashing", false);
+        
+        animator.ResetTrigger("takeDamage");
+        
+        dashAnimationEndTime = 0f;
+        
+    }
+
+    // Method to control player input
+    public void SetInputEnabled(bool enabled)
+    {
+        InputEnabled = enabled;
+    }
+
     public void LastGroundedRespawn()
     {
+        StartCoroutine(LastGroundedRespawnCoroutine());
+    }
+
+    private IEnumerator LastGroundedRespawnCoroutine()
+    {
+        // Disable player input immediately
+        SetInputEnabled(false);
+        
+        // Don't stop knockback here since we want it to finish naturally
+        // The hazard damage script will wait for knockback to complete before calling this
+        
+        // Wait for 0.3 seconds before respawning
+        yield return new WaitForSeconds(0.3f);
+        
+        // Now stop any remaining knockback and reset physics
+        if (knockback != null)
+        {
+            knockback.StopKnockback();
+        }
+        rb.linearVelocity = Vector2.zero;
+        
+        // Move to last grounded position
         transform.position = new Vector3(lastGroundedPosition.x, lastGroundedPosition.y, transform.position.z);
-        Debug.Log("Player triggered setback to last grounded position");
+        
+        // Reset animations and states
+        ResetAnimations();
+        isJumping = false;
+        isDashing = false;
+        isClimbing = false;
+        
+        // Wait additional 0.2 seconds (total 0.5 seconds of disabled input)
+        yield return new WaitForSeconds(0.2f);
+        
+        // Re-enable player input
+        SetInputEnabled(true);
+        
+        Debug.Log("Player respawned at last grounded position");
     }
 
 }

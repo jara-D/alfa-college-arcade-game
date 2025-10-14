@@ -1,5 +1,7 @@
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class Health : MonoBehaviour
 {
@@ -12,6 +14,15 @@ public class Health : MonoBehaviour
     private float invincibilityTimer;
     private Coroutine invincibilityCoroutine;
     private Knockback knockback;
+    
+    // Flag to track if player is currently dead/respawning
+    private bool isDead = false;
+    
+    // Timeline animation for damage before respawn
+    [Header("Timeline Animation")]
+    public PlayableDirector timelineDirector;
+    public TimelineAsset damageBeforeRespawnTimeline;
+    public GameObject transitionImage; // The image GameObject that gets animated
     
     // Animation
     private Animator animator;
@@ -35,6 +46,11 @@ public class Health : MonoBehaviour
     public bool isInvincibleStatus()
     {
         return isInvincible;
+    }
+
+    public bool IsDeadOrRespawning()
+    {
+        return isDead;
     }
 
     public void TakeDamage(int damage)
@@ -64,12 +80,27 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage, Transform damageSource)
     {
-        Debug.Log($"TakeDamage called with damage: {damage}, source: {(damageSource != null ? damageSource.name : "null")}");
+        TakeDamage(damage, damageSource, false); // Default to not playing timeline
+    }
+
+    public void TakeDamage(int damage, Transform damageSource, bool playTimelineOnRespawn)
+    {
+        Debug.Log($"TakeDamage called with damage: {damage}, source: {(damageSource != null ? damageSource.name : "null")}, timeline: {playTimelineOnRespawn}");
         
         if (isInvincible) 
         {
             Debug.Log("Player is invincible, damage blocked");
             return;
+        }
+
+        // Check if this damage will cause death or if this is a respawn-triggering damage
+        bool willCauseDeath = (currentHealth - damage) <= 0;
+        bool shouldPlayTimeline = playTimelineOnRespawn || willCauseDeath;
+
+        // Play timeline animation if this damage will result in respawn
+        if (shouldPlayTimeline && timelineDirector != null && damageBeforeRespawnTimeline != null)
+        {
+            StartCoroutine(PlayTimelineWithImageActivation());
         }
 
         currentHealth -= damage;
@@ -161,12 +192,65 @@ public class Health : MonoBehaviour
         Health playerHealth = gameObject.GetComponent<Health>();
         if (gameObject.CompareTag("Player"))
         {
+            // Set the dead flag to prevent other respawn methods
+            isDead = true;
+            
             //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex); // On death, reset scene
-            //If the player dies, set the player gameObject to the RespawnPoint location
-            transform.position = RespawnPoint.position;
-            playerHealth.Heal(playerHealth.maxHealth); 
+            //If the player dies, start the respawn coroutine
+            StartCoroutine(RespawnCoroutine(playerHealth));
             return;
         }
+    }
+
+    private System.Collections.IEnumerator RespawnCoroutine(Health playerHealth)
+    {
+        // Get player controller to disable input
+        PlayerController playerController = gameObject.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            // Disable player input immediately
+            playerController.SetInputEnabled(false);
+        }
+        
+        // Stop any ongoing knockback when respawning
+        if (knockback != null)
+        {
+            knockback.StopKnockback();
+        }
+        
+        // Reset player velocity immediately
+        Rigidbody2D playerRb = gameObject.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.linearVelocity = Vector2.zero;
+        }
+        
+        // Wait for 0.3 seconds before respawning
+        yield return new WaitForSeconds(0.3f);
+        
+        // Set the player gameObject to the RespawnPoint location
+        transform.position = RespawnPoint.position;
+        playerHealth.Heal(playerHealth.maxHealth);
+        
+        // Reset player animations when respawning after death
+        if (playerController != null)
+        {
+            playerController.ResetAnimations();
+        }
+        
+        // Wait additional 0.2 seconds (total 0.5 seconds of disabled input)
+        yield return new WaitForSeconds(0.2f);
+        
+        // Re-enable player input
+        if (playerController != null)
+        {
+            playerController.SetInputEnabled(true);
+        }
+        
+        // Reset the dead flag
+        isDead = false;
+        
+        Debug.Log("Player respawned at checkpoint");
     }
 
     private System.Collections.IEnumerator BecomeTemporarilyInvincible()
@@ -179,5 +263,30 @@ public class Health : MonoBehaviour
         isInvincible = false;
         invincibilityCoroutine = null; // Clear the reference when done
         UnityEngine.Debug.Log("Player is no longer invincible.");
+    }
+
+    private System.Collections.IEnumerator PlayTimelineWithImageActivation()
+    {
+        Debug.Log("Playing damage before respawn timeline animation");
+        
+        // Activate the transition image
+        if (transitionImage != null)
+        {
+            transitionImage.SetActive(true);
+            Debug.Log("Transition image activated");
+        }
+        
+        // Play the timeline
+        timelineDirector.Play(damageBeforeRespawnTimeline);
+        
+        // Wait for the timeline to finish
+        yield return new WaitForSeconds((float)damageBeforeRespawnTimeline.duration);
+        
+        // Deactivate the transition image
+        if (transitionImage != null)
+        {
+            transitionImage.SetActive(false);
+            Debug.Log("Transition image deactivated");
+        }
     }
 }
