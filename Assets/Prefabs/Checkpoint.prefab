@@ -72,7 +72,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9375, y: 0.96875}
+    oldSize: {x: 1.9375, y: 0.59375}
     newSize: {x: 1.9375, y: 0.96875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   interactionRadius: 2
   standStillTime: 1
   movementThreshold: 0.1
-  playerPositionOffset: {x: 0, y: 0.5, z: 0}
+  playerSittingOffset: {x: 0, y: 0.4, z: 0}
 --- !u!212 &531903945434609793
 SpriteRenderer:
   m_ObjectHideFlags: 0

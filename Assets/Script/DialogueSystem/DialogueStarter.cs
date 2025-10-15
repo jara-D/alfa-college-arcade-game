@@ -26,12 +26,67 @@ public class DialogueStarter : MonoBehaviour
     public bool useFallbackDialogue = true;
     
     private bool isPlayerInRange = false;
+    private PlayerController playerController;
+    private bool hasDisabledInput = false; // Track if we've disabled input for this dialogue
+    
+    // Static list to track all DialogueStarter instances
+    private static List<DialogueStarter> allDialogueStarters = new List<DialogueStarter>();
+    
+    /// <summary>
+    /// Check if any DialogueStarter has a player in range
+    /// </summary>
+    public static bool IsPlayerInAnyDialogueRange()
+    {
+        foreach (var starter in allDialogueStarters)
+        {
+            if (starter != null && starter.isPlayerInRange)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    void Start()
+    {
+        // Add this instance to the static list
+        allDialogueStarters.Add(this);
+        
+        // Find the PlayerController in the scene
+        playerController = FindFirstObjectByType<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogWarning("PlayerController not found in scene! Player movement blocking won't work.");
+        }
+    }
+    
+    void OnDestroy()
+    {
+        // Remove this instance from the static list
+        allDialogueStarters.Remove(this);
+    }
 
     void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && Input.GetButtonDown("Jump") && !dialogueManager.IsDialogueActive)
         {
             StartDialogue();
+        }
+        
+        // Re-enable player input when dialogue ends
+        CheckDialogueState();
+    }
+    
+    private void CheckDialogueState()
+    {
+        if (dialogueManager != null && playerController != null && hasDisabledInput)
+        {
+            // If dialogue has ended, re-enable player input (only once)
+            if (!dialogueManager.IsDialogueActive)
+            {
+                playerController.SetInputEnabled(true);
+                hasDisabledInput = false; // Reset flag so we don't keep enabling input
+            }
         }
     }
 
@@ -41,6 +96,13 @@ public class DialogueStarter : MonoBehaviour
         
         if (dialogueNodes != null && dialogueNodes.Count > 0)
         {
+            // Disable player movement when dialogue starts
+            if (playerController != null)
+            {
+                playerController.SetInputEnabled(false);
+                hasDisabledInput = true;
+            }
+            
             dialogueManager.StartDialogue(dialogueNodes);
             ActivatePanels();
         }

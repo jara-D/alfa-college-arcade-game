@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     [Header("Climbing")]
     public float climbSpeed = 5f;
     private float verticalMovement;
+    
+    [Header("Dialogue")]
+    private DialogueManager dialogueManager;
     public Transform wallCheckRight;
     public Transform wallCheckLeft;
     public Vector2 wallCheckRadius = new Vector2(0.2f, 1f);
@@ -67,16 +70,31 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         knockback = GetComponent<Knockback>();
         
+        // Find DialogueManager in scene
+        dialogueManager = FindFirstObjectByType<DialogueManager>();
+        
         // Debug check for missing components
         if (knockback == null)
         {
             Debug.LogWarning("Knockback component not found on " + gameObject.name);
+        }
+        
+        if (dialogueManager == null)
+        {
+            Debug.LogWarning("DialogueManager not found in scene! Dialogue-jump prevention won't work.");
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Reset movement if input is disabled
+        if (!InputEnabled)
+        {
+            horizontalMovement = 0;
+            verticalMovement = 0;
+        }
+        
         rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
         realGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckRadius, 0f, groundLayer);
 
@@ -139,6 +157,14 @@ public class PlayerController : MonoBehaviour
     {
         if (animator == null) return;
         
+        // Check if player is sitting - this takes priority over other animations
+        bool isSitting = animator.GetBool("isSitting");
+        if (isSitting)
+        {
+            // Don't override sitting animation - let CheckpointScript handle it
+            return;
+        }
+        
         bool startDashAnimation = isDashing || Time.time < dashAnimationEndTime;
         
         if (startDashAnimation)
@@ -192,6 +218,11 @@ public class PlayerController : MonoBehaviour
     {
         cutJumpShort();
         if (!Input.GetButtonDown("Jump")) return;
+        
+        // Prevent jumping if dialogue is active OR if player is in dialogue interaction range
+        if (dialogueManager != null && dialogueManager.IsDialogueActive) return;
+        if (DialogueStarter.IsPlayerInAnyDialogueRange()) return;
+        
         if (!IsGrounded() && !isClimbing) return;
 
 
@@ -229,6 +260,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isClimbing)
         {
+            // Prevent climbing jump if dialogue is active OR if player is in dialogue interaction range
+            if (dialogueManager != null && dialogueManager.IsDialogueActive) return;
+            if (DialogueStarter.IsPlayerInAnyDialogueRange()) return;
+            
             Debug.Log("Jumping off wall");
             StopClimbing();
             StartCoroutine(ClimbCooldown(0.2f));
@@ -344,8 +379,10 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isFalling", false);
         animator.SetBool("isClimbing", false);
         animator.SetBool("isDashing", false);
+        animator.SetBool("isSitting", false);
         
         animator.ResetTrigger("takeDamage");
+        animator.ResetTrigger("sittingDown");
         
         dashAnimationEndTime = 0f;
         

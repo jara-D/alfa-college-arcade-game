@@ -11,6 +11,7 @@ public class CheckpointScript : MonoBehaviour
     [SerializeField] private float interactionRadius = 2f;
     [SerializeField] private float standStillTime = 1f;
     [SerializeField] private float movementThreshold = 0.1f; // How much movement is considered "standing still"
+    [SerializeField] private Vector3 playerSittingOffset = Vector3.up; // Offset from checkpoint position where player sits
     
     private Transform playerTransform;
     private Vector3 lastPlayerPosition;
@@ -115,8 +116,15 @@ public class CheckpointScript : MonoBehaviour
         // Don't activate if already sitting
         if (isPlayerSitting) return;
         
-        Vector3 checkpointTop = transform.position + Vector3.up * 1f;
+        Vector3 checkpointTop = transform.position + playerSittingOffset;
         playerTransform.position = checkpointTop;
+        
+        // Set player velocity to zero when sitting
+        Rigidbody2D playerRb = playerTransform.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.linearVelocity = Vector2.zero;
+        }
         
         playerAnimator = playerTransform.GetComponent<Animator>();
         
