@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour
         if (!IsGrounded() && !isClimbing) return;
 
 
-        Debug.Log("Jump performed");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isJumping = true;
     }
@@ -151,7 +150,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isClimbing)
         {
-            Debug.Log("Jumping off wall");
             StopClimbing();
             StartCoroutine(ClimbCooldown(0.2f));
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * 1.2f);

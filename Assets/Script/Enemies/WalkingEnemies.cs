@@ -10,6 +10,7 @@ public class WalkingEnemies : Enemies
     private void FixedUpdate()
     {
         LookWhereMoving();
+        DrawDebug();
     }
     public override void Update()
     {
@@ -32,9 +33,17 @@ public class WalkingEnemies : Enemies
             for (int i = 0; i < patrolPoints.Length - 1; i++)
             {
                 patrolPoints[i] = patrolPoints[i + 1];
-                Debug.Log(patrolPoints[i].name);
             }
             patrolPoints[patrolPoints.Length - 1] = temp;
         }
+    }
+
+    private void DrawDebug()
+    {
+        for (int i = 0; i < patrolPoints.Length; i++)
+        {
+            Debug.DrawLine(transform.position, patrolPoints[i].position, Color.green);
+        }
+        Debug.DrawRay(patrolPoints[0].position, Vector2.up * 2, Color.red);
     }
 }

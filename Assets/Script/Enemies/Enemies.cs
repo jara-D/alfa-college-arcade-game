@@ -9,13 +9,14 @@ public abstract class Enemies : MonoBehaviour
     protected GameObject Player;
     protected SpriteRenderer spriteRenderer;
     protected Rigidbody2D rigidBody;
+    private Vector2 previousPosition;
 
-    private void Awake()
+    public virtual void Awake()
     {
         Player = GameObject.Find("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
-
+        previousPosition = rigidBody.position;
     }
 
     public virtual void Update()
@@ -29,13 +30,16 @@ public abstract class Enemies : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) damagePlayer(collision.gameObject);
     }
 
+    // FIX
     protected virtual void LookWhereMoving()
     {
-        if (rigidBody.linearVelocityX > 0)
+        Vector2 movement = rigidBody.position - previousPosition;
+        previousPosition = rigidBody.position;
+        if (movement.x < 0)
         {
             spriteRenderer.flipX = false;
         }
-        else if (rigidBody.linearVelocityX < 0)
+        else if (movement.x > 0)
         {
             spriteRenderer.flipX = true;
         }

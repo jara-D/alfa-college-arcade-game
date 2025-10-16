@@ -1,10 +1,20 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FlyingEnemy : Enemies
 {
     private Vector3 Target;
     private bool SeenPlayerRecently;
+    private NavMeshAgent agent;
+
+    public override void Awake()
+    {
+        base.Awake();
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
 
     public new void Update()
     {
@@ -16,24 +26,30 @@ public class FlyingEnemy : Enemies
     private void FixedUpdate()
     {
         Movement();
+
     }
 
     private void lookForPlayer()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Player.transform.position - transform.position, 10f);
+        Vector2 direction = (Player.transform.position - transform.position).normalized;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 10f);
+        Debug.DrawLine(transform.position, transform.position + (Vector3)direction * 10f);
 
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
+        if (hit.collider != null && hit.collider.gameObject)
         {
-            Target = Player.transform.position;
-            SeenPlayerRecently = true;
-        }
-        else
-        {
-            // if the player is not spotted, but has been seen before, start looking for the player
-            if (SeenPlayerRecently)
+            foreach (RaycastHit2D rayHit in Physics2D.RaycastAll(transform.position, direction, 10f))
             {
-                StartCoroutine(forgetPlayer());
+                if (rayHit.collider.tag == "Player")
+                {
+                    Target = Player.transform.position;
+                }
             }
+        }
+
+        // if the player is not spotted, but has been seen before, start looking for the player
+        if (SeenPlayerRecently)
+        {
+            StartCoroutine(forgetPlayer());
         }
     }
 
@@ -47,16 +63,18 @@ public class FlyingEnemy : Enemies
 
     private void Movement()
     {
-        if (Target != null)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, Target, speed * Time.deltaTime);
-        }
+        // Fix: Check if Target is zero vector (not set)
+        if (Target == Vector3.zero) return;
+        agent.SetDestination(Target);
+        Debug.Log("Moving towards player");
+
+  
     }
 
     // Visualize the raycast in the editor
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, transform.position + (Player.transform.position - transform.position).normalized * 10f);
-    }
+    //private void DebugMode()
+    //{
+    //    if ( Player == null) return;
+    //    Debug.DrawRay(transform.position, transform.position + (Player.transform.position - transform.position).normalized * 10f);
+    //}
 }
