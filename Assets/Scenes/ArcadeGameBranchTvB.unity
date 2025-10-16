@@ -849,8 +849,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -425}
-  m_SizeDelta: {x: 1650, y: 100}
+  m_AnchoredPosition: {x: 0, y: -425}
+  m_SizeDelta: {x: 1700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &497788822
 MonoBehaviour:
@@ -870,9 +870,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 5
-  m_Spacing: -1000
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_Spacing: 100
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -901,11 +901,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4606891834182750813, guid: 897b8cce94c30addf9907b2aa4d0cad2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25
+      value: 97.3
       objectReference: {fileID: 0}
     - target: {fileID: 4606891834182750813, guid: 897b8cce94c30addf9907b2aa4d0cad2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 30.5
       objectReference: {fileID: 0}
     - target: {fileID: 4606891834182750813, guid: 897b8cce94c30addf9907b2aa4d0cad2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63462,7 +63462,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1503157739}
   characterNameText: {fileID: 1400154920}
   choicesContainer: {fileID: 497788819}
-  choiceButtonPrefab: {fileID: 4507859753487169602, guid: 300d94dc4ba199247a1d7066657d0709, type: 3}
+  choiceButtonPrefab: {fileID: 299899890149019690, guid: d6b5c1d09a3769849b1ab310615c3d09, type: 3}
   DialogueTextContainer: {fileID: 1985961037}
   xButton: {fileID: 1052365162}
   typewriterSpeed: 30
@@ -64356,7 +64356,9 @@ MonoBehaviour:
   interactionRange: 1
   availableDialogues:
   - {fileID: 11400000, guid: 4720cfa74c059ae48b1dd0b962d3ac96, type: 2}
-  selectedDialogueIndex: 0
+  - {fileID: 11400000, guid: 4a1393c042b5385478d897128f96661d, type: 2}
+  - {fileID: 11400000, guid: 3eae4116fe6167b4a939e2aa2c825b21, type: 2}
+  selectedDialogueIndex: 2
   useFallbackDialogue: 1
 --- !u!4 &1090077679
 Transform:
@@ -64866,7 +64868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -64874,8 +64876,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: bb2dffc07ad704a28aa9186221cc902e, type: 2}
-    m_FontSize: 0
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -115834,7 +115836,7 @@ Tilemap:
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 59, y: 19, z: 0}
