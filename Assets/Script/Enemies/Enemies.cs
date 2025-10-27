@@ -38,7 +38,6 @@ public abstract class Enemies : MonoBehaviour
         else if (currentPosition.x < previousPosition.x)
             spriteRenderer.flipX = true;
         previousPosition = currentPosition;
-        Debug.Log(rigidBody.linearVelocityX);
     }
 
 
