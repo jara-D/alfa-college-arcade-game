@@ -22,7 +22,7 @@ public abstract class Enemies : MonoBehaviour
     public virtual void Update()
     {
         if (health <= 0) Destroy(gameObject);
-        LookWhereMoving();
+        lookWhereGoing();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,20 +30,17 @@ public abstract class Enemies : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) damagePlayer(collision.gameObject);
     }
 
-    // FIX
-    protected virtual void LookWhereMoving()
+    private void lookWhereGoing()
     {
-        Vector2 movement = rigidBody.position - previousPosition;
-        previousPosition = rigidBody.position;
-        if (movement.x < 0)
-        {
+        Vector2 currentPosition = rigidBody.position;
+        if (currentPosition.x > previousPosition.x)
             spriteRenderer.flipX = false;
-        }
-        else if (movement.x > 0)
-        {
+        else if (currentPosition.x < previousPosition.x)
             spriteRenderer.flipX = true;
-        }
+        previousPosition = currentPosition;
+        Debug.Log(rigidBody.linearVelocityX);
     }
+
 
     // gets the health component of the Player and calls the TakeDamage method
     private void damagePlayer(GameObject player) => player.GetComponent<Health>().TakeDamage(damage);

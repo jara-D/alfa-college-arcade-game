@@ -3,13 +3,6 @@ using UnityEngine;
 
 public class CheckpointScript : MonoBehaviour
 {
-
-
-    void Start()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D gameObject)
     {
         if (gameObject.CompareTag("Player"))

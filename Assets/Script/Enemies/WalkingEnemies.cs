@@ -9,7 +9,6 @@ public class WalkingEnemies : Enemies
 
     private void FixedUpdate()
     {
-        LookWhereMoving();
         DrawDebug();
     }
     public override void Update()
