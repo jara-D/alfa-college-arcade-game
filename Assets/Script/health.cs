@@ -9,7 +9,6 @@ public class Health : MonoBehaviour
 
     private bool isInvincible = false;
     public float invincibilityDuration = 1f;
-    private float invincibilityTimer;
 
     private void Start()
     {
@@ -58,6 +57,5 @@ public class Health : MonoBehaviour
         isInvincible = true;
         yield return new WaitForSeconds(invincibilityDuration);
         isInvincible = false;
-        UnityEngine.Debug.Log("Player is no longer invincible.");
     }
 }

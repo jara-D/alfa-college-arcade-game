@@ -123,7 +123,6 @@ public class FlyingEnemy : Enemies
     {
         // wait and then forget the player so wandering can resume
         yield return new WaitForSeconds(forgetDelay);
-        Debug.Log("Forgot player");
         SeenPlayerRecently = false;
         forgetCoroutine = null;
         // wanderRoutine is already running, so no need to start it here

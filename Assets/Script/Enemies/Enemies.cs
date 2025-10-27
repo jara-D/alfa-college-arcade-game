@@ -30,8 +30,6 @@ public abstract class Enemies : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")) damagePlayer(collision.gameObject);
     }
 
-
-
     private void lookWhereGoing()
     {
         Vector2 currentPosition = rigidBody.position;
