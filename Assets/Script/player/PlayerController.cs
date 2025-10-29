@@ -307,7 +307,6 @@ public class PlayerController : MonoBehaviour
         if (!IsGrounded() && !isClimbing) return;
 
 
-        Debug.Log("Jump performed");
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         isJumping = true;
     }
@@ -392,15 +391,12 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null)
             {
                 float angle = Vector2.Angle(hit.normal, Vector2.up);
-                Debug.Log($"Dash interrupted by slanted surface: {hit.collider.name}, angle: {angle}");
                 // Stop dash if surface is slanted (not flat or vertical)
                 if (angle > 10f && angle < 80f)
                 {
-                    Debug.Log($"Dash interrupted by slanted surface: {hit.collider.name}, angle: {angle}");
                     break;
                 }
             }
-
             yield return null;
         }
 
