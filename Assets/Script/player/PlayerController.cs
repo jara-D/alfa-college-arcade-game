@@ -236,17 +236,34 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isDashing", false);
         
         // Now set the appropriate animation based on current state
-        if (rb.linearVelocity.y < -0.1f && !IsGrounded() && !isClimbing)
+        // Check if player is airborne (not grounded and not climbing)
+        bool isAirborne = !IsGrounded() && !isClimbing;
+        
+        if (isAirborne)
         {
-            animator.SetBool("isFalling", true);
+            // Player is in the air - determine if jumping or falling
+            if (rb.linearVelocity.y > 0.05f)
+            {
+                animator.SetBool("isJumping", true);
+            }
+            else if (rb.linearVelocity.y < -0.05f)
+            {
+                animator.SetBool("isFalling", true);
+            }
+            else
+            {
+                // At the peak of jump (velocity near 0) - maintain current airborne state
+                // Don't change to idle while airborne
+                if (!animator.GetBool("isJumping") && !animator.GetBool("isFalling"))
+                {
+                    // If neither is set, default to jumping (since we're airborne)
+                    animator.SetBool("isJumping", true);
+                }
+            }
         }
         else if (isClimbing)
         {
             animator.SetBool("isClimbing", true);
-        }
-        else if (rb.linearVelocity.y > 0.1f && !IsGrounded() && !isClimbing)
-        {
-            animator.SetBool("isJumping", true);
         }
         else if (Mathf.Abs(horizontalMovement) > 0.1f && IsGrounded() && !isClimbing)
         {
