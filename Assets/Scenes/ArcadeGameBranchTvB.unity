@@ -115081,7 +115081,7 @@ Tilemap:
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -115994,7 +115994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631ae52dae5ab5746b1da735f698b1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: {fileID: 102900000, guid: 331bc8da1461afe05a0489850c6af2e4, type: 3}
+  levelToLoadName: 
 --- !u!1001 &4115084190154939851
 PrefabInstance:
   m_ObjectHideFlags: 0
