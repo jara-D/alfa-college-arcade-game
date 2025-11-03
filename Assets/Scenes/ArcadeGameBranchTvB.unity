@@ -115030,7 +115030,7 @@ Tilemap:
       - {fileID: -1240626031211899577, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: -1240626031211899577, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: -1240626031211899577, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 78, y: 25, z: 0}
@@ -115064,7 +115064,7 @@ Tilemap:
       - {fileID: -1240626031211899577, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: -1240626031211899577, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: -1240626031211899577, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 102, y: 32, z: 0}
@@ -115081,7 +115081,7 @@ Tilemap:
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
       - {fileID: 975423156, guid: 76b4ee3e7af644b45b3abd62fddfb81f, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -115519,63 +115519,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1887496961
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2513276215096346287, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_Name
-      value: Flying cleaner robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.9882574
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.64441
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5529856907466094711, guid: c6211b613e621a5449db5d76ac624996, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c6211b613e621a5449db5d76ac624996, type: 3}
 --- !u!1001 &1905322353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116244,4 +116187,3 @@ SceneRoots:
   - {fileID: 183813373}
   - {fileID: 2044294788}
   - {fileID: 827750369}
-  - {fileID: 1887496961}
