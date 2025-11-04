@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1152734865, guid: 50d877707a446bd499824cf9fc8fe8a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -104,8 +104,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  damage: 5
+  damage: 2
   speed: 2
+  wanderRadius: 10
+  wanderInterval: 3
+  forgetDelay: 10
 --- !u!50 &1841281455651686381
 Rigidbody2D:
   serializedVersion: 5
@@ -117,8 +120,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.49987113
+  m_UseAutoMass: 0
+  m_Mass: 4
   m_LinearDamping: 1
   m_AngularDamping: 0.05
   m_GravityScale: 0

@@ -41,6 +41,5 @@ public abstract class Enemies : MonoBehaviour
     }
 
 
-    // gets the health component of the Player and calls the TakeDamage method
-    private void damagePlayer(GameObject player) => player.GetComponent<Health>().TakeDamage(damage);
+    private void damagePlayer(GameObject player) => player.GetComponent<Health>().TakeDamage(damage, transform);
 }

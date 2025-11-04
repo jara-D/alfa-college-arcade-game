@@ -121,11 +121,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.3067553}
+  m_Offset: {x: 0, y: -0.46443504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +135,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.3864894}
+  m_Size: {x: 1, y: 1.0711299}
   m_EdgeRadius: 0
 --- !u!50 &8482587879351132550
 Rigidbody2D:
@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <damageAmount>k__BackingField: 10
+  damageEffectPrefab: {fileID: 8425520075398882230, guid: ff668830709b73e4182c7c73ad20974d, type: 3}
+  effectDuration: 0.2
+  yOffset: 0.5
 --- !u!95 &7408629381949879446
 Animator:
   serializedVersion: 7
