@@ -27,6 +27,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject DialogueTextContainer;
     public GameObject xButton;
     
+    [Header("Dialogue State")]
+    public bool IsDialogueActive { get; private set; } = false;
+    
     [Header("Typewriter Settings")]
     [Tooltip("Speed of the typewriter effect (characters per second)")]
     public float typewriterSpeed = 30f;
@@ -52,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(List<DialogueNode> nodes)
     {
+        IsDialogueActive = true;
         dialogueNodes = nodes;
         currentNodeIndex = 0;
         DisplayNode();
@@ -131,6 +135,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        IsDialogueActive = false;
+        
         // Stop typewriter coroutine if running
         if (typewriterCoroutine != null)
         {

@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880, y: -525}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1800803648858162717
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -7815701708124630548, guid: 23b6ea106817e2d4d9d59ad5e251b38a, type: 3}
     m_PressedSprite: {fileID: -7815701708124630548, guid: 23b6ea106817e2d4d9d59ad5e251b38a, type: 3}
-    m_SelectedSprite: {fileID: -7815701708124630548, guid: 23b6ea106817e2d4d9d59ad5e251b38a, type: 3}
+    m_SelectedSprite: {fileID: -92374314791649889, guid: 8ebaf096623932741a9b3720cfadaa0d, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal

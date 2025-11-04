@@ -14,7 +14,7 @@ public class XbuttonClick : MonoBehaviour
         button = GetComponent<Button>();
         if (button == null)
         {
-            Debug.LogError("XbuttonClick: No Button component found on this GameObject! Make sure this script is attached to a GameObject with a Button component.");
+            // No Button component found
             return;
         }
         
@@ -24,7 +24,7 @@ public class XbuttonClick : MonoBehaviour
             dialogueManager = FindFirstObjectByType<DialogueManager>();
             if (dialogueManager == null)
             {
-                Debug.LogError("XbuttonClick: No DialogueManager found in the scene!");
+                // No DialogueManager found
                 return;
             }
         }
@@ -40,7 +40,7 @@ public class XbuttonClick : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("XbuttonClick: DialogueManager reference is null!");
+            // DialogueManager reference is null
         }
     }
 }
