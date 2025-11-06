@@ -32,9 +32,7 @@ public class DialogueStarter : MonoBehaviour
     // Static list to track all DialogueStarter instances
     private static List<DialogueStarter> allDialogueStarters = new List<DialogueStarter>();
     
-    /// <summary>
-    /// Check if any DialogueStarter has a player in range
-    /// </summary>
+    // Check if any DialogueStarter has a player in range
     public static bool IsPlayerInAnyDialogueRange()
     {
         foreach (var starter in allDialogueStarters)
@@ -54,10 +52,6 @@ public class DialogueStarter : MonoBehaviour
         
         // Find the PlayerController in the scene
         playerController = FindFirstObjectByType<PlayerController>();
-        if (playerController == null)
-        {
-            // PlayerController not found
-        }
     }
     
     void OnDestroy()
