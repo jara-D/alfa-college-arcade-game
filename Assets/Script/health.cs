@@ -5,7 +5,7 @@ using UnityEngine.Timeline;
 public class Health : MonoBehaviour
 {
     public Transform RespawnPoint;
-    public int maxHealth = 10;
+    public int maxHealth;
     [SerializeField] public int currentHealth;
 
     private bool isInvincible = false;
@@ -50,45 +50,6 @@ public class Health : MonoBehaviour
     public bool IsDeadOrRespawning()
     {
         return isDead;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        if (isInvincible) return;
-
-        currentHealth -= damage;
-        
-        // Clamp health to not go below 0
-        if (currentHealth < 0)
-        {
-            currentHealth = 0;
-        }
-        
-        // Set invincible immediately to prevent animation interference
-        isInvincible = true;
-        
-        // Trigger damage animation
-        if (animator != null)
-        {
-            animator.SetTrigger("takeDamage");
-        }
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-
-        // Store the coroutine reference to manage it properly
-        if (invincibilityCoroutine != null)
-        {
-            StopCoroutine(invincibilityCoroutine);
-        }
-        invincibilityCoroutine = StartCoroutine(BecomeTemporarilyInvincible());
-    }
-
-    public void TakeDamage(int damage, Transform damageSource)
-    {
-        TakeDamage(damage, damageSource, false); // Default to not playing timeline
     }
 
     public void TakeDamage(int damage, Transform damageSource, bool playTimelineOnRespawn)

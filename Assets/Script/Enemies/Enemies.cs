@@ -41,5 +41,5 @@ public abstract class Enemies : MonoBehaviour
     }
 
 
-    private void damagePlayer(GameObject player) => player.GetComponent<Health>().TakeDamage(damage, transform);
+    private void damagePlayer(GameObject player) => player.GetComponent<Health>().TakeDamage(damage, transform, false);
 }

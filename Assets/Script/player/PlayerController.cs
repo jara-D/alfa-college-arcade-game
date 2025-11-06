@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
     private float verticalMovement;
     private float climbableObjectXPosition; // Store the X position of the climbable object
     private bool isXPositionLocked = false; // Track if X position is locked during climbing
-    
+
     [Header("Facing Direction")]
     private int facingDirection = 0; // 0 = right, 1 = left
     private float lastHorizontalInput = 0f; // Track last input to determine facing
-    
+
     [Header("Dialogue")]
     private DialogueManager dialogueManager;
     public Transform wallCheckRight;
@@ -67,11 +67,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Knockback")]
     private Knockback knockback;
-    
+
     [Header("Health")]
     private Health health;
 
-    
+    public bool isOnMovingTile = false;
+    public Rigidbody2D movingTileRigidbody;
+
+
 
     private void Awake()
     {
@@ -80,28 +83,28 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         knockback = GetComponent<Knockback>();
         health = GetComponent<Health>();
-        
+
         // Find DialogueManager in scene
         dialogueManager = FindFirstObjectByType<DialogueManager>();
-        
+
         // Initialize facing direction (default to right)
         facingDirection = 0;
         if (animator != null)
         {
             animator.SetInteger("facingDirection", facingDirection);
         }
-        
+
         // Check for missing components
         if (knockback == null)
         {
             // Knockback component not found
         }
-        
+
         if (health == null)
         {
             // Health component not found
         }
-        
+
         if (dialogueManager == null)
         {
             // DialogueManager not found in scene
@@ -117,26 +120,39 @@ public class PlayerController : MonoBehaviour
             horizontalMovement = 0;
             verticalMovement = 0;
         }
-        
+
         realGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckRadius, 0f, groundLayer);
 
         if (isDashing) return;
 
-        // Don't override velocity if being knocked back or if X position is locked during climbing
-        if (knockback == null || !knockback.IsBeingKnockedBack)
+        // If currently being knocked back, do not override velocity or process movement
+        if (knockback != null && knockback.IsBeingKnockedBack)
         {
-            if (isXPositionLocked && isClimbing)
-            {
-                // During climbing, don't apply horizontal movement - position is locked
-                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
-            }
-            else
-            {
-                // Normal horizontal movement when not climbing
-                rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
-            }
-            Movement();
+            return;
         }
+
+        // While climbing and X is locked, force horizontal velocity to zero and preserve Y
+        if (isXPositionLocked && isClimbing)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        }
+
+        // Determine target horizontal velocity
+        float targetXVelocity;
+        if (isOnMovingTile && movingTileRigidbody != null)
+        {
+            Debug.Log("On moving tile, adjusting velocity");
+            targetXVelocity = horizontalMovement + movingTileRigidbody.linearVelocity.x * moveSpeed;
+
+        }
+        else
+        {
+            targetXVelocity = horizontalMovement * moveSpeed;
+        }
+
+        // Apply horizontal velocity while preserving current vertical velocity
+        rb.linearVelocity = new Vector2(targetXVelocity, rb.linearVelocity.y);
+        Movement();
 
         // Always call UpdateAnimationStates, but let it handle its own protection logic
         UpdateAnimationStates();
