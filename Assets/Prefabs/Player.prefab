@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 3799482601093413743}
   - component: {fileID: 3214324781147371824}
   - component: {fileID: 7478038200225522902}
+  - component: {fileID: 7336292827291206258}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -546,7 +547,7 @@ MonoBehaviour:
   currentHealth: 0
   invincibilityDuration: 1
   timelineDirector: {fileID: 0}
-  damageBeforeRespawnTimeline: {fileID: 0}
+  damageBeforeRespawnTimeline: {fileID: 11400000, guid: 29894824e0a50084b8bb2ab9de406b89, type: 2}
   transitionImage: {fileID: 0}
 --- !u!114 &1820318957135127313
 MonoBehaviour:
@@ -587,6 +588,8 @@ MonoBehaviour:
   climbableLayer:
     serializedVersion: 2
     m_Bits: 64
+  isOnMovingTile: 0
+  movingTileRigidbody: {fileID: 0}
 --- !u!96 &3799482601093413743
 TrailRenderer:
   serializedVersion: 3
@@ -755,6 +758,28 @@ MonoBehaviour:
   knockbackTime: 0.2
   hitDirectionForce: 5
   constForce: 2
+--- !u!95 &7336292827291206258
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134455512835490721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb24145037bda314e94424a2cbfa69cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6411773938160664829
 GameObject:
   m_ObjectHideFlags: 0

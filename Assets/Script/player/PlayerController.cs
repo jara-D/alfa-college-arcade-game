@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
     private float verticalMovement;
     private float climbableObjectXPosition; // Store the X position of the climbable object
     private bool isXPositionLocked = false; // Track if X position is locked during climbing
-    
+
     [Header("Facing Direction")]
     private int facingDirection = 0; // 0 = right, 1 = left
     private float lastHorizontalInput = 0f; // Track last input to determine facing
-    
+
     [Header("Dialogue")]
     private DialogueManager dialogueManager;
     public Transform wallCheckRight;
@@ -67,11 +67,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Knockback")]
     private Knockback knockback;
-    
+
     [Header("Health")]
     private Health health;
 
-    
+    public Rigidbody2D movingTileRigidbody;
 
     private void Awake()
     {
@@ -80,28 +80,28 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         knockback = GetComponent<Knockback>();
         health = GetComponent<Health>();
-        
+
         // Find DialogueManager in scene
         dialogueManager = FindFirstObjectByType<DialogueManager>();
-        
+
         // Initialize facing direction (default to right)
         facingDirection = 0;
         if (animator != null)
         {
             animator.SetInteger("facingDirection", facingDirection);
         }
-        
+
         // Check for missing components
         if (knockback == null)
         {
             // Knockback component not found
         }
-        
+
         if (health == null)
         {
             // Health component not found
         }
-        
+
         if (dialogueManager == null)
         {
             // DialogueManager not found in scene
@@ -117,26 +117,25 @@ public class PlayerController : MonoBehaviour
             horizontalMovement = 0;
             verticalMovement = 0;
         }
-        
+
         realGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckRadius, 0f, groundLayer);
 
         if (isDashing) return;
 
-        // Don't override velocity if being knocked back or if X position is locked during climbing
-        if (knockback == null || !knockback.IsBeingKnockedBack)
+        // If currently being knocked back, do not override velocity or process movement
+        if (knockback != null && knockback.IsBeingKnockedBack)
         {
-            if (isXPositionLocked && isClimbing)
-            {
-                // During climbing, don't apply horizontal movement - position is locked
-                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
-            }
-            else
-            {
-                // Normal horizontal movement when not climbing
-                rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
-            }
-            Movement();
+            return;
         }
+
+        // While climbing and X is locked, force horizontal velocity to zero and preserve Y
+        if (isXPositionLocked && isClimbing)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        }
+
+        // Remove velocity assignment from Update. Final horizontal velocity is set in FixedUpdate.
+        Movement();
 
         // Always call UpdateAnimationStates, but let it handle its own protection logic
         UpdateAnimationStates();
@@ -151,20 +150,25 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (isDashing) return;
-        
-        // Don't override velocity if being knocked back or if X position is locked during climbing
-        if (knockback == null || !knockback.IsBeingKnockedBack)
+
+        // Don't override velocity if being knocked back
+        if (knockback != null && knockback.IsBeingKnockedBack) return;
+
+        float platformVelX = 0f;
+        if (movingTileRigidbody != null)
         {
-            if (isXPositionLocked && isClimbing)
-            {
-                // During climbing, don't apply horizontal movement - position is locked
-                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
-            }
-            else
-            {
-                // Normal horizontal movement when not climbing
-                rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed, rb.linearVelocity.y);
-            }
+            platformVelX = movingTileRigidbody.linearVelocity.x;
+        }
+
+        if (isXPositionLocked && isClimbing)
+        {
+            // During climbing, don't apply horizontal movement - position is locked
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        }
+        else
+        {
+            // Normal horizontal movement when not climbing
+            rb.linearVelocity = new Vector2(horizontalMovement * moveSpeed + platformVelX, rb.linearVelocity.y);
         }
     }
 
@@ -173,10 +177,10 @@ public class PlayerController : MonoBehaviour
         if (!InputEnabled) return;
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
-        
+
         // Update facing direction based on horizontal input
         UpdateFacingDirection();
-        
+
         Jump();
         Climbing();
 
@@ -199,19 +203,19 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = baseGravity;
         }
     }
-    
+
     private void UpdateFacingDirection()
     {
         // Update facing direction if there's any horizontal input (even small amounts)
         if (Mathf.Abs(horizontalMovement) > 0.01f)
         {
             int newFacingDirection = horizontalMovement > 0 ? 0 : 1; // 0 = right, 1 = left
-            
+
             // Update immediately when direction changes
             if (newFacingDirection != facingDirection)
             {
                 facingDirection = newFacingDirection;
-                
+
                 // Update animator parameter immediately
                 if (animator != null)
                 {
@@ -220,7 +224,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         // If no input, maintain the current facing direction (don't change it)
-        
+
         lastHorizontalInput = horizontalMovement;
     }
 
@@ -229,7 +233,7 @@ public class PlayerController : MonoBehaviour
     {
         return facingDirection;
     }
-    
+
     /// Get facing direction as a multiplier
     /// 0 = right, 1 = left
     public float GetFacingDirectionMultiplier()
@@ -240,14 +244,14 @@ public class PlayerController : MonoBehaviour
     private void UpdateAnimationStates()
     {
         if (animator == null) return;
-        
+
         // Check if player is taking damage - this takes priority over other animations
         if (health != null && health.isInvincibleStatus())
         {
             // Don't override damage animation - let Health component handle it
             return;
         }
-        
+
         // Check if player is sitting - this takes priority over other animations
         bool isSitting = animator.GetBool("isSitting");
         if (isSitting)
@@ -255,9 +259,9 @@ public class PlayerController : MonoBehaviour
             // Don't override sitting animation - let CheckpointScript handle it
             return;
         }
-        
+
         bool startDashAnimation = isDashing || Time.time < dashAnimationEndTime;
-        
+
         if (startDashAnimation)
         {
             animator.SetBool("isWalking", false);
@@ -267,15 +271,15 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isDashing", true);
             return; // Don't process any other animations
         }
-        
+
         animator.SetBool("isWalking", false);
         animator.SetBool("isJumping", false);
         animator.SetBool("isFalling", false);
         animator.SetBool("isClimbing", false);
         animator.SetBool("isDashing", false);
-        
+
         bool isAirborne = !IsGrounded() && !isClimbing;
-        
+
         if (isAirborne)
         {
             // Player is in the air
@@ -316,16 +320,16 @@ public class PlayerController : MonoBehaviour
         Vector2 movementInput = context.ReadValue<Vector2>();
         horizontalMovement = movementInput.x;
         verticalMovement = movementInput.y;
-        
+
         // Update facing direction immediately when input changes
         if (InputEnabled && Mathf.Abs(horizontalMovement) > 0.01f)
         {
             int newFacingDirection = horizontalMovement > 0 ? 0 : 1; // 0 = right, 1 = left
-            
+
             if (newFacingDirection != facingDirection)
             {
                 facingDirection = newFacingDirection;
-                
+
                 if (animator != null)
                 {
                     animator.SetInteger("facingDirection", facingDirection);
@@ -338,11 +342,11 @@ public class PlayerController : MonoBehaviour
     {
         cutJumpShort();
         if (!Input.GetButtonDown("Jump")) return;
-        
+
         // Prevent jumping if dialogue is active OR if player is in dialogue interaction range
         if (dialogueManager != null && dialogueManager.IsDialogueActive) return;
         if (DialogueStarter.IsPlayerInAnyDialogueRange()) return;
-        
+
         if (!IsGrounded() && !isClimbing) return;
 
 
@@ -364,13 +368,13 @@ public class PlayerController : MonoBehaviour
             StopClimbing();
             return;
         }
-        
+
         if (verticalMovement != 0)
         {
             isClimbing = true;
             isXPositionLocked = true;
             rb.gravityScale = 0f; // turns off gravity while climbing so the player doesn't fall
-            
+
             // Lock X position to the climbable object and only allow Y movement
             Vector3 lockedPosition = new Vector3(climbableObjectXPosition, transform.position.y, transform.position.z);
             transform.position = lockedPosition;
@@ -391,7 +395,7 @@ public class PlayerController : MonoBehaviour
             // Prevent climbing jump if dialogue is active OR if player is in dialogue interaction range
             if (dialogueManager != null && dialogueManager.IsDialogueActive) return;
             if (DialogueStarter.IsPlayerInAnyDialogueRange()) return;
-            
+
             StopClimbing();
             StartCoroutine(ClimbCooldown(0.2f));
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * 1.2f);
@@ -423,7 +427,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         // Set the minimum time the dash animation should stay active using the configurable duration
         dashAnimationEndTime = Time.time + dashAnimationMinDuration;
-        animator.SetBool ("isDashing", true);
+        animator.SetBool("isDashing", true);
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         tr.emitting = true;
@@ -459,7 +463,7 @@ public class PlayerController : MonoBehaviour
     {
         Collider2D rightWall = Physics2D.OverlapBox(wallCheckRight.position, wallCheckRadius, 0f, climbableLayer);
         Collider2D leftWall = Physics2D.OverlapBox(wallCheckLeft.position, wallCheckRadius, 0f, climbableLayer);
-        
+
         if (rightWall != null)
         {
             climbableObjectXPosition = GetClimbableTileXPosition(rightWall, wallCheckRight.position);
@@ -470,10 +474,10 @@ public class PlayerController : MonoBehaviour
             climbableObjectXPosition = GetClimbableTileXPosition(leftWall, wallCheckLeft.position);
             return true;
         }
-        
+
         return false;
     }
-    
+
     private float GetClimbableTileXPosition(Collider2D climbableCollider, Vector3 checkPosition)
     {
         // Check if it's a tilemap
@@ -483,27 +487,25 @@ public class PlayerController : MonoBehaviour
             // Get the tilemap and grid components
             Tilemap tilemap = climbableCollider.GetComponent<Tilemap>();
             Grid grid = tilemap.layoutGrid;
-            
+
             if (tilemap != null && grid != null)
             {
                 // Convert world position to cell position
                 Vector3Int cellPosition = grid.WorldToCell(checkPosition);
-                
+
                 // Get the world position of the center of this specific tile
                 Vector3 tileWorldPos = grid.CellToWorld(cellPosition);
-                
+
                 // Add half cell size to get the center of the tile
                 tileWorldPos.x += grid.cellSize.x * 0.5f;
-                
+
                 return tileWorldPos.x;
             }
         }
-        
+
         // Fallback for regular colliders (not tilemaps)
         return climbableCollider.transform.position.x;
     }
-
-
 
     // check ground methods
 
@@ -527,28 +529,22 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawCube(wallCheckLeft.position, wallCheckRadius);
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Player triggered with collision
-    }
-
     public void ResetAnimations()
     {
         if (animator == null) return;
-        
+
         animator.SetBool("isWalking", false);
         animator.SetBool("isJumping", false);
         animator.SetBool("isFalling", false);
         animator.SetBool("isClimbing", false);
         animator.SetBool("isDashing", false);
         animator.SetBool("isSitting", false);
-        
+
         animator.ResetTrigger("takeDamage");
         animator.ResetTrigger("sittingDown");
-        
+
         dashAnimationEndTime = 0f;
-        
+
     }
 
     // Method to control player input
@@ -565,29 +561,29 @@ public class PlayerController : MonoBehaviour
     private IEnumerator LastGroundedRespawnCoroutine()
     {
         SetInputEnabled(false);
-        
+
         yield return new WaitForSeconds(0.3f);
-        
+
         if (knockback != null)
         {
             knockback.StopKnockback();
         }
         rb.linearVelocity = Vector2.zero;
-        
+
         // Move to last grounded position
         transform.position = new Vector3(lastGroundedPosition.x, lastGroundedPosition.y, transform.position.z);
-        
+
         // Reset animations and states
         ResetAnimations();
         isJumping = false;
         isDashing = false;
         isClimbing = false;
-        
+
         yield return new WaitForSeconds(0.2f);
-        
+
         // Re-enable player input
         SetInputEnabled(true);
-        
+
     }
 
 }
