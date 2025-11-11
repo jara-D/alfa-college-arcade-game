@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd8006031202b946afb2d2e35ddac9e, type: 3}
+  m_Name: Johan_Strootman_1
+  m_EditorClassIdentifier: 
+  dialogueName: Johan Strootman
+  description: 
+  dialogueNodes:
+  - characterName: Johan Strootman
+    dialogueText: Een lange, ietwat grijzende man met een server op zijn rug staat
+      voor je. "Goedemiddag!"
+    choices:
+    - choiceText: '"Waarom heb je een server op je rug?"'
+      nextNodeIndex: 1
+    - choiceText: '"Ik zoek ids zijn broer"'
+      nextNodeIndex: 3
+  - characterName: Johan Strootman
+    dialogueText: '"Ik ben bezig met de backend van dit spel"'
+    choices:
+    - choiceText: '"Welk spel?"'
+      nextNodeIndex: 2
+  - characterName: Johan Strootman
+    dialogueText: '"DIT spel!" zegt Johan, wild gebarend om zich heen'
+    choices:
+    - choiceText: '"Uhm, oke? Ik zoek Ids zijn broer."'
+      nextNodeIndex: 3
+    - choiceText: Loop voorzichtig weg
+      nextNodeIndex: 999
+  - characterName: Johan Strootman
+    dialogueText: '"Nou kijk, die is normaal te vinden op de volgende verdieping"'
+    choices:
+    - choiceText: '"Welke verdieping is dat?"'
+      nextNodeIndex: 4
+  - characterName: Johan Strootman
+    dialogueText: '"De volgende." Zegt Johan met een sardonische grijns'
+    choices:
+    - choiceText: '"Ja maar welke is de volgende?"'
+      nextNodeIndex: 5
+  - characterName: Johan Strootman
+    dialogueText: '"Die ene na deze."'
+    choices:
+    - choiceText: je zucht, "Okee, dankjewel."
+      nextNodeIndex: 999

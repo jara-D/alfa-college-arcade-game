@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: d34725eb548f8784c9b822838d9775e7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ThaleahFat
+  fontNames:
+  - ThaleahFat
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 140059
+  packageName: Free Pixel Font - Thaleah
+  packageVersion: 1.1
+  assetPath: Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf
+  uploadId: 303939
