@@ -27,6 +27,13 @@ public class DialogueManager : MonoBehaviour
     public GameObject DialogueTextContainer;
     public GameObject xButton;
     
+    [Header("UI References")]
+    [Tooltip("Reference to the player's health bar to hide during dialogue")]
+    public HealthBar playerHealthBar;
+    
+    [Tooltip("Additional UI elements to hide during dialogue (e.g., health bar fill, UI panels)")]
+    public GameObject[] uiElementsToHide;
+    
     [Header("Dialogue State")]
     public bool IsDialogueActive { get; private set; } = false;
     
@@ -58,6 +65,10 @@ public class DialogueManager : MonoBehaviour
         IsDialogueActive = true;
         dialogueNodes = nodes;
         currentNodeIndex = 0;
+        
+        // Hide the health bar during dialogue
+        HideHealthBar();
+        
         DisplayNode();
     }
 
@@ -158,11 +169,66 @@ public class DialogueManager : MonoBehaviour
         {
             xButton.SetActive(false);
         }
+        
+        // Show the health bar again when dialogue ends
+        ShowHealthBar();
     }
 
     private IEnumerator HideDialogueAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         EndDialogue();
+    }
+    
+    /// <summary>
+    /// Hides the player's health bar and additional UI elements during dialogue
+    /// </summary>
+    private void HideHealthBar()
+    {
+        if (playerHealthBar == null)
+        {
+            // Try to find the health bar automatically
+            playerHealthBar = FindFirstObjectByType<HealthBar>();
+        }
+        
+        if (playerHealthBar != null)
+        {
+            playerHealthBar.gameObject.SetActive(false);
+        }
+        
+        // Hide additional UI elements
+        if (uiElementsToHide != null)
+        {
+            foreach (GameObject uiElement in uiElementsToHide)
+            {
+                if (uiElement != null)
+                {
+                    uiElement.SetActive(false);
+                }
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Shows the player's health bar and additional UI elements when dialogue ends
+    /// </summary>
+    private void ShowHealthBar()
+    {
+        if (playerHealthBar != null)
+        {
+            playerHealthBar.gameObject.SetActive(true);
+        }
+        
+        // Show additional UI elements
+        if (uiElementsToHide != null)
+        {
+            foreach (GameObject uiElement in uiElementsToHide)
+            {
+                if (uiElement != null)
+                {
+                    uiElement.SetActive(true);
+                }
+            }
+        }
     }
 }

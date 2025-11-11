@@ -96,7 +96,7 @@ MonoBehaviour:
   - {fileID: -996800295247179763, guid: ab48ad33e67bc9f4d87ee30d56ca7506, type: 3}
   - {fileID: -1631450733929358813, guid: 8f7a08b9bd36133409695f4fdafafa96, type: 3}
   - {fileID: -497502970490898606, guid: bdbb711d03a31d240b922030206ecd17, type: 3}
-  interactionRadius: 2
+  interactionRadius: 1
   standStillTime: 1
   movementThreshold: 0.1
   playerSittingOffset: {x: 0, y: 0.4, z: 0}

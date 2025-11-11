@@ -1,0 +1,3731 @@
+fileFormatVersion: 2
+guid: 7ba65cf75514dc34fa5bf57eb65724fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1381469750382040014
+    second: SchoolArcadeGameTilemapBackEnd_0
+  - first:
+      213: 6868068281877459481
+    second: SchoolArcadeGameTilemapBackEnd_1
+  - first:
+      213: 3910492274712513990
+    second: SchoolArcadeGameTilemapBackEnd_2
+  - first:
+      213: -904874768128642318
+    second: SchoolArcadeGameTilemapBackEnd_3
+  - first:
+      213: 8103441057737830381
+    second: SchoolArcadeGameTilemapBackEnd_4
+  - first:
+      213: 3036292091362446197
+    second: SchoolArcadeGameTilemapBackEnd_5
+  - first:
+      213: 198603657573374957
+    second: SchoolArcadeGameTilemapBackEnd_6
+  - first:
+      213: -6884342343508673665
+    second: SchoolArcadeGameTilemapBackEnd_7
+  - first:
+      213: -2363133849607239091
+    second: SchoolArcadeGameTilemapBackEnd_8
+  - first:
+      213: -644048321376791483
+    second: SchoolArcadeGameTilemapBackEnd_9
+  - first:
+      213: 5273365633405897964
+    second: SchoolArcadeGameTilemapBackEnd_10
+  - first:
+      213: -220864078639189344
+    second: SchoolArcadeGameTilemapBackEnd_11
+  - first:
+      213: -4619861844559908323
+    second: SchoolArcadeGameTilemapBackEnd_12
+  - first:
+      213: 2574867907390334015
+    second: SchoolArcadeGameTilemapBackEnd_13
+  - first:
+      213: 270312284279810420
+    second: SchoolArcadeGameTilemapBackEnd_14
+  - first:
+      213: -1449248960466940908
+    second: SchoolArcadeGameTilemapBackEnd_15
+  - first:
+      213: 8035238110414061443
+    second: SchoolArcadeGameTilemapBackEnd_16
+  - first:
+      213: 1529538803332690600
+    second: SchoolArcadeGameTilemapBackEnd_17
+  - first:
+      213: -4827886330886955479
+    second: SchoolArcadeGameTilemapBackEnd_18
+  - first:
+      213: -8301499605401885702
+    second: SchoolArcadeGameTilemapBackEnd_19
+  - first:
+      213: 3340995871883782804
+    second: SchoolArcadeGameTilemapBackEnd_20
+  - first:
+      213: 7892921395344754272
+    second: SchoolArcadeGameTilemapBackEnd_21
+  - first:
+      213: -7245351074141048458
+    second: SchoolArcadeGameTilemapBackEnd_22
+  - first:
+      213: 6033961846569474807
+    second: SchoolArcadeGameTilemapBackEnd_23
+  - first:
+      213: -2136790972810005572
+    second: SchoolArcadeGameTilemapBackEnd_24
+  - first:
+      213: 3039797062933380029
+    second: SchoolArcadeGameTilemapBackEnd_25
+  - first:
+      213: -3408419176840500908
+    second: SchoolArcadeGameTilemapBackEnd_26
+  - first:
+      213: 5598545284343599623
+    second: SchoolArcadeGameTilemapBackEnd_27
+  - first:
+      213: -2034921477708369228
+    second: SchoolArcadeGameTilemapBackEnd_28
+  - first:
+      213: 5211853270473212390
+    second: SchoolArcadeGameTilemapBackEnd_29
+  - first:
+      213: 8131977927151809381
+    second: SchoolArcadeGameTilemapBackEnd_30
+  - first:
+      213: -7976332489202296147
+    second: SchoolArcadeGameTilemapBackEnd_31
+  - first:
+      213: 4922935609050668082
+    second: SchoolArcadeGameTilemapBackEnd_32
+  - first:
+      213: 835817952430742625
+    second: SchoolArcadeGameTilemapBackEnd_33
+  - first:
+      213: -6397130475794154567
+    second: SchoolArcadeGameTilemapBackEnd_34
+  - first:
+      213: -3045547554844216780
+    second: SchoolArcadeGameTilemapBackEnd_35
+  - first:
+      213: 7315591870753847745
+    second: SchoolArcadeGameTilemapBackEnd_36
+  - first:
+      213: -8783143094709280333
+    second: SchoolArcadeGameTilemapBackEnd_37
+  - first:
+      213: 5042738081085477526
+    second: SchoolArcadeGameTilemapBackEnd_38
+  - first:
+      213: -849544631122230719
+    second: SchoolArcadeGameTilemapBackEnd_39
+  - first:
+      213: 8355410674440976951
+    second: SchoolArcadeGameTilemapBackEnd_40
+  - first:
+      213: -7731481578005967859
+    second: SchoolArcadeGameTilemapBackEnd_41
+  - first:
+      213: 8775756363356996559
+    second: SchoolArcadeGameTilemapBackEnd_42
+  - first:
+      213: -4828473827478378137
+    second: SchoolArcadeGameTilemapBackEnd_43
+  - first:
+      213: -3333564992703500920
+    second: SchoolArcadeGameTilemapBackEnd_44
+  - first:
+      213: 2323192196473940552
+    second: SchoolArcadeGameTilemapBackEnd_45
+  - first:
+      213: -5266256406448725881
+    second: SchoolArcadeGameTilemapBackEnd_46
+  - first:
+      213: 2689457984116518647
+    second: SchoolArcadeGameTilemapBackEnd_47
+  - first:
+      213: 1495722287484717689
+    second: SchoolArcadeGameTilemapBackEnd_48
+  - first:
+      213: -6064610204720301914
+    second: SchoolArcadeGameTilemapBackEnd_49
+  - first:
+      213: 3630653955319792209
+    second: SchoolArcadeGameTilemapBackEnd_50
+  - first:
+      213: -3603666822659457526
+    second: SchoolArcadeGameTilemapBackEnd_51
+  - first:
+      213: -1518065943137521613
+    second: SchoolArcadeGameTilemapBackEnd_52
+  - first:
+      213: 3131886234994296436
+    second: SchoolArcadeGameTilemapBackEnd_53
+  - first:
+      213: 1734195458921791932
+    second: SchoolArcadeGameTilemapBackEnd_54
+  - first:
+      213: -222041307278225768
+    second: SchoolArcadeGameTilemapBackEnd_55
+  - first:
+      213: 3754017243012423429
+    second: SchoolArcadeGameTilemapBackEnd_56
+  - first:
+      213: -3381971923896330084
+    second: SchoolArcadeGameTilemapBackEnd_57
+  - first:
+      213: -8940513739622464790
+    second: SchoolArcadeGameTilemapBackEnd_58
+  - first:
+      213: 2418004918828880225
+    second: SchoolArcadeGameTilemapBackEnd_59
+  - first:
+      213: -7205231620089631284
+    second: SchoolArcadeGameTilemapBackEnd_60
+  - first:
+      213: 3434082347334215523
+    second: SchoolArcadeGameTilemapBackEnd_61
+  - first:
+      213: -4443751394084540235
+    second: SchoolArcadeGameTilemapBackEnd_62
+  - first:
+      213: 2887697884862113014
+    second: SchoolArcadeGameTilemapBackEnd_63
+  - first:
+      213: 2926918661387813765
+    second: SchoolArcadeGameTilemapBackEnd_64
+  - first:
+      213: 8611847085004650675
+    second: SchoolArcadeGameTilemapBackEnd_65
+  - first:
+      213: -6212088583849766735
+    second: SchoolArcadeGameTilemapBackEnd_66
+  - first:
+      213: -4369930711048726572
+    second: SchoolArcadeGameTilemapBackEnd_67
+  - first:
+      213: -5512618867247383824
+    second: SchoolArcadeGameTilemapBackEnd_68
+  - first:
+      213: -9033393235577885556
+    second: SchoolArcadeGameTilemapBackEnd_69
+  - first:
+      213: -7002466761984910898
+    second: SchoolArcadeGameTilemapBackEnd_70
+  - first:
+      213: 1510797832838370880
+    second: SchoolArcadeGameTilemapBackEnd_71
+  - first:
+      213: 3223212992138542777
+    second: SchoolArcadeGameTilemapBackEnd_72
+  - first:
+      213: 1740126293898909419
+    second: SchoolArcadeGameTilemapBackEnd_73
+  - first:
+      213: -8020903784622942195
+    second: SchoolArcadeGameTilemapBackEnd_74
+  - first:
+      213: -5667940834063459094
+    second: SchoolArcadeGameTilemapBackEnd_75
+  - first:
+      213: -4021098015879351034
+    second: SchoolArcadeGameTilemapBackEnd_76
+  - first:
+      213: 1707104853783909191
+    second: SchoolArcadeGameTilemapBackEnd_77
+  - first:
+      213: -4089835156069806034
+    second: SchoolArcadeGameTilemapBackEnd_78
+  - first:
+      213: -6236557937017233254
+    second: SchoolArcadeGameTilemapBackEnd_79
+  - first:
+      213: -7171897458002094142
+    second: SchoolArcadeGameTilemapBackEnd_80
+  - first:
+      213: 6535570728269754754
+    second: SchoolArcadeGameTilemapBackEnd_81
+  - first:
+      213: -1198389589685051056
+    second: SchoolArcadeGameTilemapBackEnd_82
+  - first:
+      213: 32587176477436093
+    second: SchoolArcadeGameTilemapBackEnd_83
+  - first:
+      213: -8126795464947862571
+    second: SchoolArcadeGameTilemapBackEnd_84
+  - first:
+      213: -2153564741659214891
+    second: SchoolArcadeGameTilemapBackEnd_85
+  - first:
+      213: -2443869653316622436
+    second: SchoolArcadeGameTilemapBackEnd_86
+  - first:
+      213: 2680728906389222531
+    second: SchoolArcadeGameTilemapBackEnd_87
+  - first:
+      213: 6961210138808388557
+    second: SchoolArcadeGameTilemapBackEnd_88
+  - first:
+      213: 8216019630779549781
+    second: SchoolArcadeGameTilemapBackEnd_89
+  - first:
+      213: -8532540775179430346
+    second: SchoolArcadeGameTilemapBackEnd_90
+  - first:
+      213: -4271605516725055253
+    second: SchoolArcadeGameTilemapBackEnd_91
+  - first:
+      213: 7933836013688769557
+    second: SchoolArcadeGameTilemapBackEnd_92
+  - first:
+      213: -408661651729322737
+    second: SchoolArcadeGameTilemapBackEnd_93
+  - first:
+      213: -1277665032931092053
+    second: SchoolArcadeGameTilemapBackEnd_94
+  - first:
+      213: -1186596395581369504
+    second: SchoolArcadeGameTilemapBackEnd_95
+  - first:
+      213: 2573123827615377554
+    second: SchoolArcadeGameTilemapBackEnd_96
+  - first:
+      213: 2224184919821579953
+    second: SchoolArcadeGameTilemapBackEnd_97
+  - first:
+      213: 8798827775129670753
+    second: SchoolArcadeGameTilemapBackEnd_98
+  - first:
+      213: -2919385571884512220
+    second: SchoolArcadeGameTilemapBackEnd_99
+  - first:
+      213: 8002422586898663353
+    second: SchoolArcadeGameTilemapBackEnd_100
+  - first:
+      213: 855034045627613234
+    second: SchoolArcadeGameTilemapBackEnd_101
+  - first:
+      213: -3693479503316269263
+    second: SchoolArcadeGameTilemapBackEnd_102
+  - first:
+      213: -7424577823455259053
+    second: SchoolArcadeGameTilemapBackEnd_103
+  - first:
+      213: 8687816208947297392
+    second: SchoolArcadeGameTilemapBackEnd_104
+  - first:
+      213: 8154082095630918919
+    second: SchoolArcadeGameTilemapBackEnd_105
+  - first:
+      213: -7998546651168230472
+    second: SchoolArcadeGameTilemapBackEnd_106
+  - first:
+      213: -202760687039556132
+    second: SchoolArcadeGameTilemapBackEnd_107
+  - first:
+      213: -1478959055077611261
+    second: SchoolArcadeGameTilemapBackEnd_108
+  - first:
+      213: 6902184720106598245
+    second: SchoolArcadeGameTilemapBackEnd_109
+  - first:
+      213: 5655326598602048851
+    second: SchoolArcadeGameTilemapBackEnd_110
+  - first:
+      213: 2160914317207633783
+    second: SchoolArcadeGameTilemapBackEnd_111
+  - first:
+      213: 2788674881504203946
+    second: SchoolArcadeGameTilemapBackEnd_112
+  - first:
+      213: -5212659207955158118
+    second: SchoolArcadeGameTilemapBackEnd_113
+  - first:
+      213: 3051413475643661709
+    second: SchoolArcadeGameTilemapBackEnd_114
+  - first:
+      213: -1198591960158182762
+    second: SchoolArcadeGameTilemapBackEnd_115
+  - first:
+      213: 3118589349110139346
+    second: SchoolArcadeGameTilemapBackEnd_116
+  - first:
+      213: -5628917788533136952
+    second: SchoolArcadeGameTilemapBackEnd_117
+  - first:
+      213: 5991849941011251384
+    second: SchoolArcadeGameTilemapBackEnd_118
+  - first:
+      213: 8716364147533212973
+    second: SchoolArcadeGameTilemapBackEnd_119
+  - first:
+      213: -6609645461784271627
+    second: SchoolArcadeGameTilemapBackEnd_120
+  - first:
+      213: 6543225404097898745
+    second: SchoolArcadeGameTilemapBackEnd_121
+  - first:
+      213: -5027101658621696392
+    second: SchoolArcadeGameTilemapBackEnd_122
+  - first:
+      213: 2359566768458707566
+    second: SchoolArcadeGameTilemapBackEnd_123
+  - first:
+      213: 6550463661625107115
+    second: SchoolArcadeGameTilemapBackEnd_124
+  - first:
+      213: 5462010055477516938
+    second: SchoolArcadeGameTilemapBackEnd_125
+  - first:
+      213: -3284963698717234082
+    second: SchoolArcadeGameTilemapBackEnd_126
+  - first:
+      213: 914264982845959903
+    second: SchoolArcadeGameTilemapBackEnd_127
+  - first:
+      213: -2964437018413120657
+    second: SchoolArcadeGameTilemapBackEnd_128
+  - first:
+      213: -6040466324100214515
+    second: SchoolArcadeGameTilemapBackEnd_129
+  - first:
+      213: 8307661801234552267
+    second: SchoolArcadeGameTilemapBackEnd_130
+  - first:
+      213: -8548636871258915735
+    second: SchoolArcadeGameTilemapBackEnd_131
+  - first:
+      213: 4422787409403542473
+    second: SchoolArcadeGameTilemapBackEnd_132
+  - first:
+      213: 6187087785055574592
+    second: SchoolArcadeGameTilemapBackEnd_133
+  - first:
+      213: 7011686710628897564
+    second: SchoolArcadeGameTilemapBackEnd_134
+  - first:
+      213: -8231521264948888371
+    second: SchoolArcadeGameTilemapBackEnd_135
+  - first:
+      213: -3323437913643796889
+    second: SchoolArcadeGameTilemapBackEnd_136
+  - first:
+      213: 1727086637180510391
+    second: SchoolArcadeGameTilemapBackEnd_137
+  - first:
+      213: 7067236695183550788
+    second: SchoolArcadeGameTilemapBackEnd_138
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ce784d49804dce0800000000000000
+      internalID: -1381469750382040014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 912fe6ab6b7405f50800000000000000
+      internalID: 6868068281877459481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd0623510cd44630800000000000000
+      internalID: 3910492274712513990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f27a7f413d3173f0800000000000000
+      internalID: -904874768128642318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def67c845b4357070800000000000000
+      internalID: 8103441057737830381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b8cf3f193132a20800000000000000
+      internalID: 3036292091362446197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb11cc69f491c200800000000000000
+      internalID: 198603657573374957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b3cf60d17e570a0800000000000000
+      internalID: -6884342343508673665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4a8571c846743fd0800000000000000
+      internalID: -2363133849607239091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544562ac671ef07f0800000000000000
+      internalID: -644048321376791483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec49e5aa12ce2940800000000000000
+      internalID: 5273365633405897964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a231196a455fecf0800000000000000
+      internalID: -220864078639189344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1230a32124f2efb0800000000000000
+      internalID: -4619861844559908323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f34ed8338b4cbb320800000000000000
+      internalID: 2574867907390334015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4792ce2279750c300800000000000000
+      internalID: 270312284279810420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c8348bfbb33ebe0800000000000000
+      internalID: -1449248960466940908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_16
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f39e82d76e28f60800000000000000
+      internalID: 8035238110414061443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a232d210730a3510800000000000000
+      internalID: 1529538803332690600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ed48716f6effcb0800000000000000
+      internalID: -4827886330886955479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3a9f497162bcc80800000000000000
+      internalID: -8301499605401885702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_20
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49aedab4b0a9d5e20800000000000000
+      internalID: 3340995871883782804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 066ca99c03a498d60800000000000000
+      internalID: 7892921395344754272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_22
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671f3d8e597537b90800000000000000
+      internalID: -7245351074141048458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_23
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fa98058450fcb350800000000000000
+      internalID: 6033961846569474807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_24
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3f5627ee79852e0800000000000000
+      internalID: -2136790972810005572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_25
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 336
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb7b6db2578f2a20800000000000000
+      internalID: 3039797062933380029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459eac631dcd2b0d0800000000000000
+      internalID: -3408419176840500908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7021d34164702bd40800000000000000
+      internalID: 5598545284343599623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2316f82b182c3e0800000000000000
+      internalID: -2034921477708369228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e183089fe8345840800000000000000
+      internalID: 5211853270473212390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_30
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5637335f6d69ad070800000000000000
+      internalID: 8131977927151809381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa90ba8cdf5e4190800000000000000
+      internalID: -7976332489202296147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_32
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c16958ad7c15440800000000000000
+      internalID: 4922935609050668082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_33
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c5787dffb699b00800000000000000
+      internalID: 835817952430742625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_34
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbb678c9b3d837a0800000000000000
+      internalID: -6397130475794154567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_35
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43273f682aa0cb5d0800000000000000
+      internalID: -3045547554844216780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_36
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c9b40afb04368560800000000000000
+      internalID: 7315591870753847745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_37
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b1ad64f3e10c1680800000000000000
+      internalID: -8783143094709280333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_38
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6925f6231976bf540800000000000000
+      internalID: 5042738081085477526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1428e19b8afc534f0800000000000000
+      internalID: -849544631122230719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_40
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73abf825db164f370800000000000000
+      internalID: 8355410674440976951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_41
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c4a7bc77244b490800000000000000
+      internalID: -7731481578005967859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_42
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc38441aaefb9c970800000000000000
+      internalID: 8775756363356996559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76961e1e2a0ddfcb0800000000000000
+      internalID: -4828473827478378137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_44
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88dea361d4cccb1d0800000000000000
+      internalID: -3333564992703500920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_45
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ae9cf6ef2ad3020800000000000000
+      internalID: 2323192196473940552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_46
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780af7d33bf7ae6b0800000000000000
+      internalID: -5266256406448725881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_47
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe6a9589cfd25520800000000000000
+      internalID: 2689457984116518647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_48
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a492cee7fd1c410800000000000000
+      internalID: 1495722287484717689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_49
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8ff66862d26dba0800000000000000
+      internalID: -6064610204720301914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_50
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152043d498ca26230800000000000000
+      internalID: 3630653955319792209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_51
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0eb58a2e143dfdc0800000000000000
+      internalID: -3603666822659457526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_52
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3307ba9511fbeeae0800000000000000
+      internalID: -1518065943137521613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_53
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 240
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47645c1ffe1b67b20800000000000000
+      internalID: 3131886234994296436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1012ce499111810800000000000000
+      internalID: 1734195458921791932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_55
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ec7328b962becf0800000000000000
+      internalID: -222041307278225768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_56
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f527afac2f81430800000000000000
+      internalID: 3754017243012423429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_57
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9890d32472d011d0800000000000000
+      internalID: -3381971923896330084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_58
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2cd486f1aece380800000000000000
+      internalID: -8940513739622464790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_59
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16151fb99aa7e8120800000000000000
+      internalID: 2418004918828880225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_60
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd25283400e10c90800000000000000
+      internalID: -7205231620089631284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_61
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 367ab4a43bf48af20800000000000000
+      internalID: 3434082347334215523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_62
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0b17da6af9452c0800000000000000
+      internalID: -4443751394084540235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_63
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f46ad53de9231820800000000000000
+      internalID: 2887697884862113014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_64
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5838b7ad3018e9820800000000000000
+      internalID: 2926918661387813765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_65
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b87fa9db4d638770800000000000000
+      internalID: 8611847085004650675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_66
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b01066985a3ac9a0800000000000000
+      internalID: -6212088583849766735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_67
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7ded2db23ea53c0800000000000000
+      internalID: -4369930711048726572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_68
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa7a9be85e3f73b0800000000000000
+      internalID: -5512618867247383824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_69
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ca6f496b0f2a280800000000000000
+      internalID: -9033393235577885556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_70
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9d864a49d32de90800000000000000
+      internalID: -7002466761984910898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046d2c9df9e67f410800000000000000
+      internalID: 1510797832838370880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be77d793272bbc20800000000000000
+      internalID: 3223212992138542777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_73
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6592c05ab262810800000000000000
+      internalID: 1740126293898909419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_74
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0896f3218600b090800000000000000
+      internalID: -8020903784622942195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_75
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec57b967dd6751b0800000000000000
+      internalID: -5667940834063459094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_76
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605bb74c8a03238c0800000000000000
+      internalID: -4021098015879351034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_77
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7439224e1dad0b710800000000000000
+      internalID: 1707104853783909191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_78
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e201e8c289cfd37c0800000000000000
+      internalID: -4089835156069806034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_79
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a90e1f6599b4379a0800000000000000
+      internalID: -6236557937017233254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_80
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c71242a24d487c90800000000000000
+      internalID: -7171897458002094142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_81
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281b5fe43f203ba50800000000000000
+      internalID: 6535570728269754754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_82
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051eb4c74077e5fe0800000000000000
+      internalID: -1198389589685051056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_83
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db8ab264dd5c37000800000000000000
+      internalID: 32587176477436093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_84
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3f68d0592d73f80800000000000000
+      internalID: -8126795464947862571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_85
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dbb89c07400d12e0800000000000000
+      internalID: -2153564741659214891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_86
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97a4bc9f71a51ed0800000000000000
+      internalID: -2443869653316622436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_87
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384737cbcbcd33520800000000000000
+      internalID: 2680728906389222531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb858a3dbf2b9060800000000000000
+      internalID: 6961210138808388557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_89
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5584048e25a250270800000000000000
+      internalID: 8216019630779549781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_90
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636d4ef4f53569980800000000000000
+      internalID: -8532540775179430346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_91
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0110b1a6538b4c0800000000000000
+      internalID: -4271605516725055253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_92
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51cce16b1d5aa1e60800000000000000
+      internalID: 7933836013688769557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_93
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d69579464245af0800000000000000
+      internalID: -408661651729322737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_94
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba954320c62d44ee0800000000000000
+      internalID: -1277665032931092053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_95
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0631d957ddc588fe0800000000000000
+      internalID: -1186596395581369504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_96
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298ab1cfc7295b320800000000000000
+      internalID: 2573123827615377554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_97
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6febc7664edde10800000000000000
+      internalID: 2224184919821579953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_98
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164d1784e37bb1a70800000000000000
+      internalID: 8798827775129670753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_99
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c4c693a424c77d0800000000000000
+      internalID: -2919385571884512220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_100
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b748a2b1f05e0f60800000000000000
+      internalID: 8002422586898663353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_101
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230cf703fe0bddb00800000000000000
+      internalID: 855034045627613234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_102
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 137c5abe5ff1ebcc0800000000000000
+      internalID: -3693479503316269263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_103
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 356d4b18ec996f890800000000000000
+      internalID: -7424577823455259053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_104
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c3f20efc2519870800000000000000
+      internalID: 8687816208947297392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705247bb67e192170800000000000000
+      internalID: 8154082095630918919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_106
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b33ab9e2347ff090800000000000000
+      internalID: -7998546651168230472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_107
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5d79aba36af2df0800000000000000
+      internalID: -202760687039556132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_108
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30960c4439ea97be0800000000000000
+      internalID: -1478959055077611261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_109
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f25100f6c79cf50800000000000000
+      internalID: 6902184720106598245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_110
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3554e760491cb7e40800000000000000
+      internalID: 5655326598602048851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_111
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f773b5f1c1dfd10800000000000000
+      internalID: 2160914317207633783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_112
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4dc1a970d53b620800000000000000
+      internalID: 2788674881504203946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_113
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9be9a6711ae8a7b0800000000000000
+      internalID: -5212659207955158118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_114
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d9496936cc85a20800000000000000
+      internalID: 3051413475643661709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_115
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692e12076febd5fe0800000000000000
+      internalID: -1198591960158182762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_116
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9c6027d74774b20800000000000000
+      internalID: 3118589349110139346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_117
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1ea98381112e1b0800000000000000
+      internalID: -5628917788533136952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_118
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0cb6176c3572350800000000000000
+      internalID: 5991849941011251384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_119
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2deaaac20fb6f870800000000000000
+      internalID: 8716364147533212973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_120
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f4631fc872d544a0800000000000000
+      internalID: -6609645461784271627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_121
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8219866d43eca50800000000000000
+      internalID: 6543225404097898745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_122
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876a31c1da52c3ab0800000000000000
+      internalID: -5027101658621696392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_123
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e623cc1797ddeb020800000000000000
+      internalID: 2359566768458707566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_124
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba2e4419efbe7ea50800000000000000
+      internalID: 6550463661625107115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_125
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a595cd435fccb40800000000000000
+      internalID: 5462010055477516938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_126
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ce7e5abe67962d0800000000000000
+      internalID: -3284963698717234082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_127
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdeac1d682f10bc00800000000000000
+      internalID: 914264982845959903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_128
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f63c77eec343cd6d0800000000000000
+      internalID: -2964437018413120657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_129
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d011c4ac1e3fb2ca0800000000000000
+      internalID: -6040466324100214515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_130
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5daa0746eba4370800000000000000
+      internalID: 8307661801234552267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_131
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c3ec6ee042d5980800000000000000
+      internalID: -8548636871258915735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_132
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb719647b5e06d30800000000000000
+      internalID: 4422787409403542473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_133
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a55665f83fcd550800000000000000
+      internalID: 6187087785055574592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_134
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13dc5fe9e38e4160800000000000000
+      internalID: 7011686710628897564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_135
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dccb5a1a503c3cd80800000000000000
+      internalID: -8231521264948888371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_136
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766323c63d6c0e1d0800000000000000
+      internalID: -3323437913643796889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_137
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0e7716528d7f710800000000000000
+      internalID: 1727086637180510391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameTilemapBackEnd_138
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4496508945ed31260800000000000000
+      internalID: 7067236695183550788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e4e8d6c41bd100f4f9d3f7adf7394aa9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SchoolArcadeGameTilemapBackEnd_0: -1381469750382040014
+      SchoolArcadeGameTilemapBackEnd_1: 6868068281877459481
+      SchoolArcadeGameTilemapBackEnd_10: 5273365633405897964
+      SchoolArcadeGameTilemapBackEnd_100: 8002422586898663353
+      SchoolArcadeGameTilemapBackEnd_101: 855034045627613234
+      SchoolArcadeGameTilemapBackEnd_102: -3693479503316269263
+      SchoolArcadeGameTilemapBackEnd_103: -7424577823455259053
+      SchoolArcadeGameTilemapBackEnd_104: 8687816208947297392
+      SchoolArcadeGameTilemapBackEnd_105: 8154082095630918919
+      SchoolArcadeGameTilemapBackEnd_106: -7998546651168230472
+      SchoolArcadeGameTilemapBackEnd_107: -202760687039556132
+      SchoolArcadeGameTilemapBackEnd_108: -1478959055077611261
+      SchoolArcadeGameTilemapBackEnd_109: 6902184720106598245
+      SchoolArcadeGameTilemapBackEnd_11: -220864078639189344
+      SchoolArcadeGameTilemapBackEnd_110: 5655326598602048851
+      SchoolArcadeGameTilemapBackEnd_111: 2160914317207633783
+      SchoolArcadeGameTilemapBackEnd_112: 2788674881504203946
+      SchoolArcadeGameTilemapBackEnd_113: -5212659207955158118
+      SchoolArcadeGameTilemapBackEnd_114: 3051413475643661709
+      SchoolArcadeGameTilemapBackEnd_115: -1198591960158182762
+      SchoolArcadeGameTilemapBackEnd_116: 3118589349110139346
+      SchoolArcadeGameTilemapBackEnd_117: -5628917788533136952
+      SchoolArcadeGameTilemapBackEnd_118: 5991849941011251384
+      SchoolArcadeGameTilemapBackEnd_119: 8716364147533212973
+      SchoolArcadeGameTilemapBackEnd_12: -4619861844559908323
+      SchoolArcadeGameTilemapBackEnd_120: -6609645461784271627
+      SchoolArcadeGameTilemapBackEnd_121: 6543225404097898745
+      SchoolArcadeGameTilemapBackEnd_122: -5027101658621696392
+      SchoolArcadeGameTilemapBackEnd_123: 2359566768458707566
+      SchoolArcadeGameTilemapBackEnd_124: 6550463661625107115
+      SchoolArcadeGameTilemapBackEnd_125: 5462010055477516938
+      SchoolArcadeGameTilemapBackEnd_126: -3284963698717234082
+      SchoolArcadeGameTilemapBackEnd_127: 914264982845959903
+      SchoolArcadeGameTilemapBackEnd_128: -2964437018413120657
+      SchoolArcadeGameTilemapBackEnd_129: -6040466324100214515
+      SchoolArcadeGameTilemapBackEnd_13: 2574867907390334015
+      SchoolArcadeGameTilemapBackEnd_130: 8307661801234552267
+      SchoolArcadeGameTilemapBackEnd_131: -8548636871258915735
+      SchoolArcadeGameTilemapBackEnd_132: 4422787409403542473
+      SchoolArcadeGameTilemapBackEnd_133: 6187087785055574592
+      SchoolArcadeGameTilemapBackEnd_134: 7011686710628897564
+      SchoolArcadeGameTilemapBackEnd_135: -8231521264948888371
+      SchoolArcadeGameTilemapBackEnd_136: -3323437913643796889
+      SchoolArcadeGameTilemapBackEnd_137: 1727086637180510391
+      SchoolArcadeGameTilemapBackEnd_138: 7067236695183550788
+      SchoolArcadeGameTilemapBackEnd_14: 270312284279810420
+      SchoolArcadeGameTilemapBackEnd_15: -1449248960466940908
+      SchoolArcadeGameTilemapBackEnd_16: 8035238110414061443
+      SchoolArcadeGameTilemapBackEnd_17: 1529538803332690600
+      SchoolArcadeGameTilemapBackEnd_18: -4827886330886955479
+      SchoolArcadeGameTilemapBackEnd_19: -8301499605401885702
+      SchoolArcadeGameTilemapBackEnd_2: 3910492274712513990
+      SchoolArcadeGameTilemapBackEnd_20: 3340995871883782804
+      SchoolArcadeGameTilemapBackEnd_21: 7892921395344754272
+      SchoolArcadeGameTilemapBackEnd_22: -7245351074141048458
+      SchoolArcadeGameTilemapBackEnd_23: 6033961846569474807
+      SchoolArcadeGameTilemapBackEnd_24: -2136790972810005572
+      SchoolArcadeGameTilemapBackEnd_25: 3039797062933380029
+      SchoolArcadeGameTilemapBackEnd_26: -3408419176840500908
+      SchoolArcadeGameTilemapBackEnd_27: 5598545284343599623
+      SchoolArcadeGameTilemapBackEnd_28: -2034921477708369228
+      SchoolArcadeGameTilemapBackEnd_29: 5211853270473212390
+      SchoolArcadeGameTilemapBackEnd_3: -904874768128642318
+      SchoolArcadeGameTilemapBackEnd_30: 8131977927151809381
+      SchoolArcadeGameTilemapBackEnd_31: -7976332489202296147
+      SchoolArcadeGameTilemapBackEnd_32: 4922935609050668082
+      SchoolArcadeGameTilemapBackEnd_33: 835817952430742625
+      SchoolArcadeGameTilemapBackEnd_34: -6397130475794154567
+      SchoolArcadeGameTilemapBackEnd_35: -3045547554844216780
+      SchoolArcadeGameTilemapBackEnd_36: 7315591870753847745
+      SchoolArcadeGameTilemapBackEnd_37: -8783143094709280333
+      SchoolArcadeGameTilemapBackEnd_38: 5042738081085477526
+      SchoolArcadeGameTilemapBackEnd_39: -849544631122230719
+      SchoolArcadeGameTilemapBackEnd_4: 8103441057737830381
+      SchoolArcadeGameTilemapBackEnd_40: 8355410674440976951
+      SchoolArcadeGameTilemapBackEnd_41: -7731481578005967859
+      SchoolArcadeGameTilemapBackEnd_42: 8775756363356996559
+      SchoolArcadeGameTilemapBackEnd_43: -4828473827478378137
+      SchoolArcadeGameTilemapBackEnd_44: -3333564992703500920
+      SchoolArcadeGameTilemapBackEnd_45: 2323192196473940552
+      SchoolArcadeGameTilemapBackEnd_46: -5266256406448725881
+      SchoolArcadeGameTilemapBackEnd_47: 2689457984116518647
+      SchoolArcadeGameTilemapBackEnd_48: 1495722287484717689
+      SchoolArcadeGameTilemapBackEnd_49: -6064610204720301914
+      SchoolArcadeGameTilemapBackEnd_5: 3036292091362446197
+      SchoolArcadeGameTilemapBackEnd_50: 3630653955319792209
+      SchoolArcadeGameTilemapBackEnd_51: -3603666822659457526
+      SchoolArcadeGameTilemapBackEnd_52: -1518065943137521613
+      SchoolArcadeGameTilemapBackEnd_53: 3131886234994296436
+      SchoolArcadeGameTilemapBackEnd_54: 1734195458921791932
+      SchoolArcadeGameTilemapBackEnd_55: -222041307278225768
+      SchoolArcadeGameTilemapBackEnd_56: 3754017243012423429
+      SchoolArcadeGameTilemapBackEnd_57: -3381971923896330084
+      SchoolArcadeGameTilemapBackEnd_58: -8940513739622464790
+      SchoolArcadeGameTilemapBackEnd_59: 2418004918828880225
+      SchoolArcadeGameTilemapBackEnd_6: 198603657573374957
+      SchoolArcadeGameTilemapBackEnd_60: -7205231620089631284
+      SchoolArcadeGameTilemapBackEnd_61: 3434082347334215523
+      SchoolArcadeGameTilemapBackEnd_62: -4443751394084540235
+      SchoolArcadeGameTilemapBackEnd_63: 2887697884862113014
+      SchoolArcadeGameTilemapBackEnd_64: 2926918661387813765
+      SchoolArcadeGameTilemapBackEnd_65: 8611847085004650675
+      SchoolArcadeGameTilemapBackEnd_66: -6212088583849766735
+      SchoolArcadeGameTilemapBackEnd_67: -4369930711048726572
+      SchoolArcadeGameTilemapBackEnd_68: -5512618867247383824
+      SchoolArcadeGameTilemapBackEnd_69: -9033393235577885556
+      SchoolArcadeGameTilemapBackEnd_7: -6884342343508673665
+      SchoolArcadeGameTilemapBackEnd_70: -7002466761984910898
+      SchoolArcadeGameTilemapBackEnd_71: 1510797832838370880
+      SchoolArcadeGameTilemapBackEnd_72: 3223212992138542777
+      SchoolArcadeGameTilemapBackEnd_73: 1740126293898909419
+      SchoolArcadeGameTilemapBackEnd_74: -8020903784622942195
+      SchoolArcadeGameTilemapBackEnd_75: -5667940834063459094
+      SchoolArcadeGameTilemapBackEnd_76: -4021098015879351034
+      SchoolArcadeGameTilemapBackEnd_77: 1707104853783909191
+      SchoolArcadeGameTilemapBackEnd_78: -4089835156069806034
+      SchoolArcadeGameTilemapBackEnd_79: -6236557937017233254
+      SchoolArcadeGameTilemapBackEnd_8: -2363133849607239091
+      SchoolArcadeGameTilemapBackEnd_80: -7171897458002094142
+      SchoolArcadeGameTilemapBackEnd_81: 6535570728269754754
+      SchoolArcadeGameTilemapBackEnd_82: -1198389589685051056
+      SchoolArcadeGameTilemapBackEnd_83: 32587176477436093
+      SchoolArcadeGameTilemapBackEnd_84: -8126795464947862571
+      SchoolArcadeGameTilemapBackEnd_85: -2153564741659214891
+      SchoolArcadeGameTilemapBackEnd_86: -2443869653316622436
+      SchoolArcadeGameTilemapBackEnd_87: 2680728906389222531
+      SchoolArcadeGameTilemapBackEnd_88: 6961210138808388557
+      SchoolArcadeGameTilemapBackEnd_89: 8216019630779549781
+      SchoolArcadeGameTilemapBackEnd_9: -644048321376791483
+      SchoolArcadeGameTilemapBackEnd_90: -8532540775179430346
+      SchoolArcadeGameTilemapBackEnd_91: -4271605516725055253
+      SchoolArcadeGameTilemapBackEnd_92: 7933836013688769557
+      SchoolArcadeGameTilemapBackEnd_93: -408661651729322737
+      SchoolArcadeGameTilemapBackEnd_94: -1277665032931092053
+      SchoolArcadeGameTilemapBackEnd_95: -1186596395581369504
+      SchoolArcadeGameTilemapBackEnd_96: 2573123827615377554
+      SchoolArcadeGameTilemapBackEnd_97: 2224184919821579953
+      SchoolArcadeGameTilemapBackEnd_98: 8798827775129670753
+      SchoolArcadeGameTilemapBackEnd_99: -2919385571884512220
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -562,12 +562,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  jumpForce: 15
+  jumpForce: 17
   coyoteTime: 0.3
   dashingPower: 20
   dashingTime: 0.2
   dashAnimationMinDuration: 0.2
-  dashingCooledown: 1
+  dashingCooledown: 0.5
   dashStopLayer:
     serializedVersion: 2
     m_Bits: 136
@@ -716,7 +716,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ebd93b5ac1451fee2bbd0909fbd60f49, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
