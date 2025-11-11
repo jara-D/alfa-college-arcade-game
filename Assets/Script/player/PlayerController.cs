@@ -64,13 +64,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float footstepMoveThreshold = 0.05f; // min horizontal speed to consider "moving"
     private float _footstepTimer = 0f;
 
-    [Header("Audio")]
-    [SerializeField] private float footstepInterval = 0.20f; // seconds between footsteps
-    [SerializeField] private float footstepMoveThreshold = 0.05f; // min horizontal speed to consider "moving"
-    private float _footstepTimer = 0f;
 
-
->>>>>>> Stashed changes
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -139,7 +133,6 @@ public class PlayerController : MonoBehaviour
             // _footstepTimer = footstepInterval;
             _footstepTimer = 0f;
         }
->>>>>>> Stashed changes
     }
 
     private void Movement()
@@ -190,7 +183,6 @@ public class PlayerController : MonoBehaviour
 
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        SoundEffectManager.Play("Jump");
         SoundEffectManager.Play("Jump");
         isJumping = true;
     }
@@ -258,7 +250,6 @@ public class PlayerController : MonoBehaviour
         dashAnimationEndTime = Time.time + dashAnimationMinDuration;
         animator.SetBool ("isDashing", true);
         SoundEffectManager.Play("Dash");
->>>>>>> Stashed changes
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         tr.emitting = true;
