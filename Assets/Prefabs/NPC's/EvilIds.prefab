@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2070772708709970737
+--- !u!1 &1935962474026469562
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5209260592656988159}
-  - component: {fileID: 4999653529161844547}
-  - component: {fileID: 3275346586953283904}
+  - component: {fileID: 5473654989268450100}
+  - component: {fileID: 4582264115799635967}
+  - component: {fileID: 31255839952136807}
+  - component: {fileID: 5860502772463311778}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: EvilIds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5209260592656988159
+--- !u!4 &5473654989268450100
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070772708709970737}
+  m_GameObject: {fileID: 1935962474026469562}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.41, y: 1.87, z: 0.78268284}
+  m_LocalPosition: {x: -22.709192, y: 1.6871718, z: -0.016753979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2364737991943141519}
+  - {fileID: 8913104779147190861}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4999653529161844547
+--- !u!61 &4582264115799635967
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070772708709970737}
+  m_GameObject: {fileID: 1935962474026469562}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -68,7 +69,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.04011154, y: -0.08330917}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -78,15 +79,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5988846, y: 1.5615654}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3275346586953283904
+--- !u!114 &31255839952136807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070772708709970737}
+  m_GameObject: {fileID: 1935962474026469562}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b802b2564c0f4e46a677a87a1098b94, type: 3}
@@ -96,12 +97,24 @@ MonoBehaviour:
   DialogueTextContainer: {fileID: 0}
   choicesContainer: {fileID: 0}
   xButton: {fileID: 0}
-  interactionRange: 1
-  availableDialogues:
-  - {fileID: 11400000, guid: 3eae4116fe6167b4a939e2aa2c825b21, type: 2}
+  interactionRange: 2
+  availableDialogues: []
   selectedDialogueIndex: 0
   useFallbackDialogue: 1
---- !u!1 &5775258147221930423
+--- !u!114 &5860502772463311778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935962474026469562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4a9adf9a42ee94789990eb81c2e38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookingAt: {fileID: 0}
+--- !u!1 &6742200076947423544
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,38 +122,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2364737991943141519}
-  - component: {fileID: 4776649161056511325}
-  - component: {fileID: 319078287694407745}
+  - component: {fileID: 8913104779147190861}
+  - component: {fileID: 8933483931990023115}
+  - component: {fileID: 182393453041275446}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Evil Ids sprite_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2364737991943141519
+--- !u!4 &8913104779147190861
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775258147221930423}
+  m_GameObject: {fileID: 6742200076947423544}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.29, y: 0.25, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5209260592656988159}
+  m_Father: {fileID: 5473654989268450100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4776649161056511325
+--- !u!212 &8933483931990023115
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775258147221930423}
+  m_GameObject: {fileID: 6742200076947423544}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -178,28 +191,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2462553863246829168, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
+  m_Sprite: {fileID: -8488788178762625341, guid: 666e27aae0c7db14a9e460d4d84e8451, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.875}
+  m_Size: {x: 0.5, y: 0.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &319078287694407745
+--- !u!95 &182393453041275446
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775258147221930423}
+  m_GameObject: {fileID: 6742200076947423544}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82aad980d5ac2144288a3ad0d506c951, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d23f6a5f33927a4990eae55bac950dd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

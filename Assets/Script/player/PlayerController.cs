@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private CapsuleCollider2D col;
-    private bool InputEnabled = true;
+    public bool InputEnabled = true;
 
     private Animator animator;
     [Header("Movement")]
