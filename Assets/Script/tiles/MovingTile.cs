@@ -1,83 +1,73 @@
-    using System.Collections.Generic;
-    using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class MovingTile : MonoBehaviour
 {
-    // Stores an ordered list of positions (waypoints) for the tile to move between.
     public List<Transform> waypoints;
     private int currentTargetIndex = 0;
 
     private PlayerController playerController;
     private Rigidbody2D rb;
-    private Vector3 moveDirection;
 
     public float speed = 2f;
+    private Vector2 previousPosition;
 
-    public void Start()
+    private void Start()
     {
-        // Keep the reference but don't rely on parenting to move the player
         var playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
             playerController = playerObj.GetComponent<PlayerController>();
 
         rb = GetComponent<Rigidbody2D>();
-        DirectionCalculate();
-    }
+        previousPosition = rb.position;
 
-    public void Update()
-    {
         if (waypoints.Count == 0)
         {
             Debug.LogWarning("No waypoints set for MovingTile.");
-            return;
-        }
-        Vector3 targetPosition = waypoints[currentTargetIndex].position;
-        float step = speed * Time.deltaTime;
-        DirectionCalculate();
-        if (Vector3.Distance(transform.position, targetPosition) < 0.001f)
-        {
-            currentTargetIndex = (currentTargetIndex + 1) % waypoints.Count;
         }
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = moveDirection * speed;
-    }
+        if (waypoints.Count == 0) return;
 
-    void DirectionCalculate()
-    {
-        moveDirection = (waypoints[currentTargetIndex].position - transform.position).normalized;
-    }
+        Vector2 currentPosition = rb.position;
+        Vector2 targetPosition = waypoints[currentTargetIndex].position;
 
-    // Use collision to notify the player controller instead of changing the transform parent.
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        // Move toward the target
+        Vector2 newPosition = Vector2.MoveTowards(currentPosition, targetPosition, speed * Time.fixedDeltaTime);
+        rb.MovePosition(newPosition);
+
+        // Calculate and apply linear velocity
+        // this doesn't effect the movement on the platform but does effect the player
+        rb.linearVelocity = (newPosition - previousPosition) / Time.fixedDeltaTime;
+        previousPosition = newPosition;
+
+        // Switch to next waypoint if close enough
+        if (Vector2.Distance(newPosition, targetPosition) < 0.05f)
         {
-            // sets the parent of the player to this transform
-
-            if (playerController != null)
-            {
-                playerController.movingTileRigidbody = rb;
-            }
+            currentTargetIndex = (currentTargetIndex + 1) % waypoints.Count;
         }
     }
 
-    public void OnCollisionExit2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && playerController != null)
         {
-            if (playerController != null)
-            {
-                playerController.movingTileRigidbody = null;
-            }
+            playerController.movingTileRigidbody = rb;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && playerController != null)
+        {
+            playerController.movingTileRigidbody = null;
         }
     }
 
     private void OnDrawGizmos()
     {
-        // Draw lines between waypoints for visualization in the editor
         if (waypoints == null || waypoints.Count < 2) return;
         Gizmos.color = Color.green;
         for (int i = 0; i < waypoints.Count; i++)

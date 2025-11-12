@@ -1,0 +1,309 @@
+fileFormatVersion: 2
+guid: 4ffc22081929b3c448731727e44a633a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8278926356487703071
+    second: SchoolArcadeGameBackEndTerminal_0
+  - first:
+      213: -6960011997646087563
+    second: SchoolArcadeGameBackEndTerminal_1
+  - first:
+      213: 1851184203930297493
+    second: SchoolArcadeGameBackEndTerminal_2
+  - first:
+      213: -2948318628261587297
+    second: SchoolArcadeGameBackEndTerminal_3
+  - first:
+      213: 2473260741487977820
+    second: SchoolArcadeGameBackEndTerminal_4
+  - first:
+      213: -899902891921229870
+    second: SchoolArcadeGameBackEndTerminal_5
+  - first:
+      213: 2762357309548093374
+    second: SchoolArcadeGameBackEndTerminal_6
+  - first:
+      213: 8206719994827026802
+    second: SchoolArcadeGameBackEndTerminal_7
+  - first:
+      213: 1118917516101873406
+    second: SchoolArcadeGameBackEndTerminal_8
+  - first:
+      213: 8680644702266264649
+    second: SchoolArcadeGameBackEndTerminal_9
+  - first:
+      213: -2101712105503879455
+    second: SchoolArcadeGameBackEndTerminal_10
+  - first:
+      213: -2536744078412080010
+    second: SchoolArcadeGameBackEndTerminal_11
+  - first:
+      213: -6947596394381059362
+    second: SchoolArcadeGameBackEndTerminal_12
+  - first:
+      213: 124502169742530774
+    second: SchoolArcadeGameBackEndTerminal_13
+  - first:
+      213: 8743812199983197332
+    second: SchoolArcadeGameBackEndTerminal_14
+  - first:
+      213: -6028569438505310873
+    second: SchoolArcadeGameBackEndTerminal_15
+  - first:
+      213: -5917614109307245626
+    second: SchoolArcadeGameBackEndTerminal_16
+  - first:
+      213: -3148230132852169958
+    second: SchoolArcadeGameBackEndTerminal_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndTerminal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a811858a7a4e270800000000000000
+      internalID: 8278926356487703071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndTerminal_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a19dfb6f1196f90800000000000000
+      internalID: -6960011997646087563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndTerminal_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5946419b93ab0b910800000000000000
+      internalID: 1851184203930297493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndTerminal_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f961dc514d77517d0800000000000000
+      internalID: -2948318628261587297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndTerminal_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c556f4d5a89c25220800000000000000
+      internalID: 2473260741487977820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndTerminal_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d730b27617e283f0800000000000000
+      internalID: -899902891921229870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d0ffe03fdd7fc6748a5079416e9101c2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SchoolArcadeGameBackEndTerminal_0: 8278926356487703071
+      SchoolArcadeGameBackEndTerminal_1: -6960011997646087563
+      SchoolArcadeGameBackEndTerminal_2: 1851184203930297493
+      SchoolArcadeGameBackEndTerminal_3: -2948318628261587297
+      SchoolArcadeGameBackEndTerminal_4: 2473260741487977820
+      SchoolArcadeGameBackEndTerminal_5: -899902891921229870
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

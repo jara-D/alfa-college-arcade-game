@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: c05b451ff39682844b59bac2ca160adf
   - enabled: 1
-    path: Assets/Scenes/ArcadeGameBranchTvB.unity
+    path: Assets/Scenes/TutorialLevelScene.unity
     guid: f36d3f383abba774b9b619a8969731d0
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 331bc8da1461afe05a0489850c6af2e4
+    path: Assets/Scenes/BackEndLevelScene.unity
+    guid: e1f671daa443a994fb1ccee65b966a34
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
