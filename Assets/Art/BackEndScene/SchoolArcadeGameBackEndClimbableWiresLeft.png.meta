@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: e08ae37507db8cf4a9b654f280769878
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6032755557721355742
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_0
+  - first:
+      213: 7289468735119228991
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_1
+  - first:
+      213: 3723959525970496051
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_2
+  - first:
+      213: 8915259078842854086
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_3
+  - first:
+      213: 5692853518704102440
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_4
+  - first:
+      213: 5540897111108963105
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_5
+  - first:
+      213: -2725056723129388114
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_6
+  - first:
+      213: 6649907777218059192
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_7
+  - first:
+      213: -1385340505692968141
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_8
+  - first:
+      213: 2815982317914663815
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_9
+  - first:
+      213: 4762225861915810268
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_10
+  - first:
+      213: -8322466464068635114
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_11
+  - first:
+      213: -6429943907463732482
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_12
+  - first:
+      213: -6583084909413189102
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_13
+  - first:
+      213: 305224465366754640
+    second: SchoolArcadeGameBackEndClimbableWiresLeft_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: 0}
+        - {x: 10, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5beb28737a8b350800000000000000
+      internalID: 6032755557721355742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30091e7135692560800000000000000
+      internalID: 7289468735119228991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 8}
+        - {x: -4, y: 8}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a476f55792ea330800000000000000
+      internalID: 3723959525970496051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: 0}
+        - {x: 10, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca210ba5ec59bb70800000000000000
+      internalID: 8915259078842854086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82cc0bcfc14110f40800000000000000
+      internalID: 5692853518704102440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_5
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 8}
+        - {x: -4, y: 8}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b43acc09835ec40800000000000000
+      internalID: 5540897111108963105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: 0}
+        - {x: 10, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea335192957ae2ad0800000000000000
+      internalID: -2725056723129388114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb903204e7394c50800000000000000
+      internalID: 6649907777218059192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_8
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 8}
+        - {x: -4, y: 8}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33be531662846cce0800000000000000
+      internalID: -1385340505692968141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: 0}
+        - {x: 10, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ba5199ff0641720800000000000000
+      internalID: 2815982317914663815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd99ba7a033d61240800000000000000
+      internalID: 4762225861915810268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_11
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 8}
+        - {x: -4, y: 8}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616761268d8a08c80800000000000000
+      internalID: -8322466464068635114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: 0}
+        - {x: 10, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef2efed551044c6a0800000000000000
+      internalID: -6429943907463732482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 16}
+        - {x: -4, y: 16}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21a3130572f24a4a0800000000000000
+      internalID: -6583084909413189102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SchoolArcadeGameBackEndClimbableWiresLeft_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: 10, y: 8}
+        - {x: -4, y: 8}
+        - {x: -4, y: -16}
+        - {x: 10, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055a1fab8006c3400800000000000000
+      internalID: 305224465366754640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a14574ca7a3c0a749a413429ce2a0b9e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SchoolArcadeGameBackEndClimbableWiresLeft_0: 6032755557721355742
+      SchoolArcadeGameBackEndClimbableWiresLeft_1: 7289468735119228991
+      SchoolArcadeGameBackEndClimbableWiresLeft_10: 4762225861915810268
+      SchoolArcadeGameBackEndClimbableWiresLeft_11: -8322466464068635114
+      SchoolArcadeGameBackEndClimbableWiresLeft_12: -6429943907463732482
+      SchoolArcadeGameBackEndClimbableWiresLeft_13: -6583084909413189102
+      SchoolArcadeGameBackEndClimbableWiresLeft_14: 305224465366754640
+      SchoolArcadeGameBackEndClimbableWiresLeft_2: 3723959525970496051
+      SchoolArcadeGameBackEndClimbableWiresLeft_3: 8915259078842854086
+      SchoolArcadeGameBackEndClimbableWiresLeft_4: 5692853518704102440
+      SchoolArcadeGameBackEndClimbableWiresLeft_5: 5540897111108963105
+      SchoolArcadeGameBackEndClimbableWiresLeft_6: -2725056723129388114
+      SchoolArcadeGameBackEndClimbableWiresLeft_7: 6649907777218059192
+      SchoolArcadeGameBackEndClimbableWiresLeft_8: -1385340505692968141
+      SchoolArcadeGameBackEndClimbableWiresLeft_9: 2815982317914663815
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
