@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 422420d78cd949d4b821202b366abd48
+guid: 30b66ff55286fd24f9a27613f932465f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -178497339120988367
-    second: SparkFX4_0
+      213: -799817649440115528
+    second: Bench_tutorial_0
   - first:
-      213: 4830903388127292009
-    second: SparkFX4_1
+      213: 1163153814268703643
+    second: Bench_tutorial_1
   - first:
-      213: -9195316136345341119
-    second: SparkFX4_2
+      213: -1239991559263648671
+    second: Bench_tutorial_2
+  - first:
+      213: 7709014591915194814
+    second: Bench_tutorial_3
+  - first:
+      213: -205445805711720537
+    second: Bench_tutorial_4
+  - first:
+      213: 6586102591878001043
+    second: Bench_tutorial_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,12 +61,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,23 +128,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SparkFX4_0
+      name: Bench_tutorial_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 112
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 13f4754ad99d58df0800000000000000
-      internalID: -178497339120988367
+      spriteID: 8b4b800e51a76e4f0800000000000000
+      internalID: -799817649440115528
       vertices: []
       indices: 
       edges: []
@@ -144,7 +153,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6dbca8b8548f8b84fab6e3d0e9079aad
+    spriteID: b0578a27b5dfe824fb3909350d719de7
     internalID: 0
     vertices: []
     indices: 
@@ -154,9 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SparkFX4_0: -178497339120988367
-      SparkFX4_1: 4830903388127292009
-      SparkFX4_2: -9195316136345341119
+      Bench_tutorial_0: -799817649440115528
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
