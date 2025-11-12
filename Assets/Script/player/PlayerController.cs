@@ -90,22 +90,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetInteger("facingDirection", facingDirection);
         }
-
-        // Check for missing components
-        if (knockback == null)
-        {
-            // Knockback component not found
-        }
-
-        if (health == null)
-        {
-            // Health component not found
-        }
-
-        if (dialogueManager == null)
-        {
-            // DialogueManager not found in scene
-        }
     }
 
     // Update is called once per frame
