@@ -69,7 +69,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.06763363, y: 0.019892514}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79,7 +79,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.9309635, y: 1.8832213}
   m_EdgeRadius: 0
 --- !u!114 &31255839952136807
 MonoBehaviour:
@@ -97,7 +97,7 @@ MonoBehaviour:
   DialogueTextContainer: {fileID: 0}
   choicesContainer: {fileID: 0}
   xButton: {fileID: 0}
-  interactionRange: 2
+  interactionRange: 1
   availableDialogues: []
   selectedDialogueIndex: 0
   useFallbackDialogue: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4a9adf9a42ee94789990eb81c2e38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LookingAt: {fileID: 0}
+  LookingAt: {fileID: 5134455512835490721, guid: 897b8cce94c30addf9907b2aa4d0cad2, type: 3}
 --- !u!1 &6742200076947423544
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ Transform:
   m_GameObject: {fileID: 6742200076947423544}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29, y: 0.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

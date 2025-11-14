@@ -26,7 +26,6 @@ public class NPC : MonoBehaviour
         if (LookingAt.GetComponent<PlayerController>().InputEnabled )
         {
             anim.Play("Idle");
-           
         }
         else
         {
