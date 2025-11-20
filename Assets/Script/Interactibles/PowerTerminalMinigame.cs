@@ -47,6 +47,10 @@ public class PowerTerminalMinigame : MonoBehaviour
     [Tooltip("Spotlight 2D to disable when all terminals complete")]
     [SerializeField] private UnityEngine.Rendering.Universal.Light2D spotlightToDisable;
     
+    [Header("Background Activation")]
+    [Tooltip("Background GameObject to activate when all terminals are completed")]
+    [SerializeField] private GameObject backgroundToActivate;
+    
     private CodePuzzle currentPuzzle;
     [Header("Player Control")]
     private PlayerController playerController;
@@ -318,6 +322,17 @@ public class PowerTerminalMinigame : MonoBehaviour
         
         // Control global lighting
         ControlGlobalLighting();
+        
+        // Activate background if assigned
+        if (backgroundToActivate != null)
+        {
+            backgroundToActivate.SetActive(true);
+            Debug.Log("Background activated!");
+        }
+        else
+        {
+            Debug.Log("No background GameObject assigned to activate.");
+        }
     }
 
     private void ControlGlobalLighting()
