@@ -66,6 +66,44 @@ public class DialogueManager : MonoBehaviour
         dialogueNodes = nodes;
         currentNodeIndex = 0;
         
+        // Activate UI panels and ensure they're interactable
+        if (DialogueTextContainer != null)
+        {
+            DialogueTextContainer.SetActive(true);
+            
+            // Ensure Canvas Group doesn't block interactions
+            var canvasGroup = DialogueTextContainer.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.alpha = 1f;
+            }
+        }
+        
+        if (xButton != null)
+        {
+            xButton.SetActive(true);
+            
+            // Ensure Canvas Group doesn't block interactions
+            var canvasGroup = xButton.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.alpha = 1f;
+            }
+            
+            // Ensure button component is interactable
+            var button = xButton.GetComponent<UnityEngine.UI.Button>();
+            if (button != null)
+            {
+                button.interactable = true;
+            }
+        }
+        
+        // choicesContainer will be activated when needed in DisplayNode
+        
         // Hide the health bar during dialogue
         HideHealthBar();
         
@@ -118,11 +156,28 @@ public class DialogueManager : MonoBehaviour
         skipRequested = false;
         
         // Now create the choice buttons after typing is complete
-        foreach (var choice in node.choices)
+        if (node.choices.Count > 0)
         {
-            Button choiceButton = Instantiate(choiceButtonPrefab, choicesContainer.transform);
-            choiceButton.GetComponentInChildren<Text>().text = choice.choiceText;
-            choiceButton.onClick.AddListener(() => SelectChoice(choice.nextNodeIndex));
+            // Activate choices container and ensure it's interactable
+            choicesContainer.SetActive(true);
+            
+            var canvasGroup = choicesContainer.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+                canvasGroup.alpha = 1f;
+            }
+            
+            foreach (var choice in node.choices)
+            {
+                Button choiceButton = Instantiate(choiceButtonPrefab, choicesContainer.transform);
+                choiceButton.GetComponentInChildren<Text>().text = choice.choiceText;
+                choiceButton.onClick.AddListener(() => SelectChoice(choice.nextNodeIndex));
+                
+                // Ensure choice button is interactable
+                choiceButton.interactable = true;
+            }
         }
 
         if (node.choices.Count == 0)

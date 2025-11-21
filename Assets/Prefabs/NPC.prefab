@@ -78,7 +78,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5988846, y: 1.5615654}
+  m_Size: {x: 2, y: 1.5615654}
   m_EdgeRadius: 0
 --- !u!114 &3275346586953283904
 MonoBehaviour:
@@ -97,10 +97,35 @@ MonoBehaviour:
   choicesContainer: {fileID: 0}
   xButton: {fileID: 0}
   interactionRange: 1
+  facePlayer: 1
+  defaultFacingDirection: 1
   availableDialogues:
-  - {fileID: 11400000, guid: 3eae4116fe6167b4a939e2aa2c825b21, type: 2}
+  - {fileID: 0}
   selectedDialogueIndex: 0
   useFallbackDialogue: 1
+  Ids: 0
+  Johan: 0
+  Christiaan: 0
+  Carlo: 0
+  Maik: 0
+  Sjoerd: 0
+  EvilIds: 0
+  IdsIdle: IdsIdle
+  IdsTalking: IdsTalking
+  JohanIdle: JohanIdle
+  JohanTalking: JohanTalking
+  JohanKnee: JohanKnee
+  ChristiaanIdle: ChristiaanIdle
+  ChristiaanTalking: ChristiaanTalking
+  CarloIdle: CarloIdle
+  CarloTalking: CarloTalking
+  MaikIdle: MaikIdle
+  MaikTalking: MaikTalking
+  SjoerdIdle: SjoerdIdle
+  SjoerdTalking: SjoerdTalking
+  EvilIdsIdle: EvilIdsIdle
+  EvilIdsTalking: EvilIdsTalking
+  characterAnimator: {fileID: 319078287694407745}
 --- !u!1 &5775258147221930423
 GameObject:
   m_ObjectHideFlags: 0

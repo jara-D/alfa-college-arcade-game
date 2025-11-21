@@ -15,6 +15,13 @@ public class DialogueStarter : MonoBehaviour
     [Header("Interaction Settings")]
     public float interactionRange = 2f;
     
+    [Header("Character Facing")]
+    [Tooltip("Should the character turn to face the player when they approach?")]
+    public bool facePlayer = true;
+    
+    [Tooltip("Which direction is the character's default facing direction? (1 = right, -1 = left)")]
+    public int defaultFacingDirection = -1;
+    
     [Header("Dialogue Selection")]
     [Tooltip("List of possible dialogues to choose from")]
     public List<DialogueData> availableDialogues = new List<DialogueData>();
@@ -73,6 +80,8 @@ public class DialogueStarter : MonoBehaviour
     private bool isPlayerInRange = false;
     private PlayerController playerController;
     private bool hasDisabledInput = false; // Track if we've disabled input for this dialogue
+    private bool hasFlippedToFacePlayer = false; // Track if we've flipped to face player
+    private Vector3 originalScale; // Store original scale
     
     // Static list to track all DialogueStarter instances
     private static List<DialogueStarter> allDialogueStarters = new List<DialogueStarter>();
@@ -98,6 +107,9 @@ public class DialogueStarter : MonoBehaviour
         // Find the PlayerController in the scene
         playerController = FindFirstObjectByType<PlayerController>();
         
+        // Store original scale for flipping
+        originalScale = transform.localScale;
+        
         // Set idle animation for the selected character
         SetCharacterIdleAnimation();
     }
@@ -113,6 +125,18 @@ public class DialogueStarter : MonoBehaviour
         if (isPlayerInRange && Input.GetButtonDown("Jump") && !dialogueManager.IsDialogueActive)
         {
             StartDialogue();
+        }
+        
+        // Emergency dialogue exit (Escape key) - for debugging the softlock issue
+        if (dialogueManager.IsDialogueActive && Input.GetKeyDown(KeyCode.Escape))
+        {
+            ForceEndDialogue();
+        }
+        
+        // Continuously face the player if face player is enabled
+        if (facePlayer && playerController != null)
+        {
+            FacePlayer(playerController.transform);
         }
         
         // Re-enable player input when dialogue ends
@@ -141,6 +165,9 @@ public class DialogueStarter : MonoBehaviour
         
         if (dialogueNodes != null && dialogueNodes.Count > 0)
         {
+            // Activate UI panels first
+            ActivatePanels();
+            
             // Disable player movement when dialogue starts
             if (playerController != null)
             {
@@ -148,23 +175,25 @@ public class DialogueStarter : MonoBehaviour
                 hasDisabledInput = true;
             }
             
-            // Handle Johan's special knee animation before talking
+            // Handle Johan's special knee animation - but start dialogue immediately
             if (Johan)
             {
-                StartCoroutine(JohanDialogueSequence(dialogueNodes));
+                // Start dialogue immediately
+                dialogueManager.StartDialogue(dialogueNodes);
+                
+                // Play knee animation sequence in background
+                StartCoroutine(JohanKneeAnimationSequence());
             }
             else
             {
                 // Set talking animation for other characters
                 SetCharacterTalkingAnimation(true);
                 dialogueManager.StartDialogue(dialogueNodes);
-                // Activate panels after starting dialogue for other characters
-                ActivatePanels();
             }
         }
         else
         {
-            // No valid dialogue found
+            Debug.LogError("No valid dialogue found!");
         }
     }
     
@@ -204,41 +233,65 @@ public class DialogueStarter : MonoBehaviour
         };
     }
 
+    // Activate panels and ensure Canvas Groups are properly configured for interaction
     private void ActivatePanels()
     {
         if (DialogueTextContainer != null)
         {
             DialogueTextContainer.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("DialogueTextContainer is null on " + gameObject.name);
+            
+            // Check for Canvas Group blocking
+            var canvasGroup = DialogueTextContainer.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+            }
         }
 
         if (choicesContainer != null)
         {
             choicesContainer.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("ChoicesContainer is null on " + gameObject.name);
+            
+            // Check for Canvas Group blocking
+            var canvasGroup = choicesContainer.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+            }
         }
         
         if (xButton != null)
         {
             xButton.SetActive(true);
+            
+            // Check for Canvas Group blocking
+            var canvasGroup = xButton.GetComponent<CanvasGroup>();
+            if (canvasGroup != null)
+            {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+            }
+            
+            // Also check the button component itself
+            var button = xButton.GetComponent<UnityEngine.UI.Button>();
+            if (button != null)
+            {
+                button.interactable = true;
+            }
         }
-        else
-        {
-            Debug.LogWarning("XButton is null on " + gameObject.name);
-        }
+        
+        // Force UI refresh
+        Canvas.ForceUpdateCanvases();
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
+            // Player facing is now handled continuously in Update()
         }
     }
 
@@ -247,6 +300,7 @@ public class DialogueStarter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+            // Player facing continues even when out of interaction range
         }
     }
 
@@ -292,7 +346,30 @@ public class DialogueStarter : MonoBehaviour
     }
     
     /// <summary>
-    /// Coroutine to handle Johan's knee animation sequence before dialogue
+    /// Coroutine to handle Johan's knee animation sequence (runs in background while dialogue is active)
+    /// </summary>
+    private System.Collections.IEnumerator JohanKneeAnimationSequence()
+    {
+        if (characterAnimator != null)
+        {
+            // Reset all animations and start knee animation
+            ResetAllAnimations();
+            characterAnimator.SetBool(JohanKnee, true);
+        }
+        
+        // Wait for 0.5 seconds
+        yield return new WaitForSeconds(0.5f);
+        
+        if (characterAnimator != null)
+        {
+            // Switch to talking animation
+            ResetAllAnimations();
+            characterAnimator.SetBool(JohanTalking, true);
+        }
+    }
+
+    /// <summary>
+    /// Coroutine to handle Johan's knee animation sequence before dialogue (DEPRECATED - keeping for reference)
     /// </summary>
     /// <param name="dialogueNodes">The dialogue to start after knee animation</param>
     private System.Collections.IEnumerator JohanDialogueSequence(List<DialogueNode> dialogueNodes)
@@ -314,9 +391,8 @@ public class DialogueStarter : MonoBehaviour
             characterAnimator.SetBool(JohanTalking, true);
         }
         
-        // Start dialogue and activate panels
+        // Start dialogue - let DialogueManager handle UI
         dialogueManager.StartDialogue(dialogueNodes);
-        ActivatePanels();
     }
 
     /// <summary>
@@ -417,6 +493,99 @@ public class DialogueStarter : MonoBehaviour
         // Reset Evil Ids animations
         characterAnimator.SetBool(EvilIdsIdle, false);
         characterAnimator.SetBool(EvilIdsTalking, false);
+    }
+    
+    /// <summary>
+    /// Make the character face towards the player
+    /// </summary>
+    /// <param name="playerTransform">The player's transform</param>
+    private void FacePlayer(Transform playerTransform)
+    {
+        // Calculate direction to player
+        float directionToPlayer = playerTransform.position.x - transform.position.x;
+        
+        // Determine which way the character should face
+        // If player X is lower than NPC X, look right (1)
+        // If player X is higher than NPC X, look left (-1)
+        int targetFacingDirection = directionToPlayer < 0 ? 1 : -1;
+        int currentFacingDirection = GetCurrentFacingDirection();
+        
+        // Flip if we need to change direction
+        if (targetFacingDirection != currentFacingDirection)
+        {
+            FlipCharacter();
+            hasFlippedToFacePlayer = true;
+        }
+    }
+    
+    /// <summary>
+    /// Return character to their default facing direction
+    /// </summary>
+    private void ReturnToDefaultFacing()
+    {
+        // Only flip back if current direction doesn't match default
+        if (GetCurrentFacingDirection() != defaultFacingDirection)
+        {
+            FlipCharacter();
+        }
+        hasFlippedToFacePlayer = false;
+    }
+    
+    /// <summary>
+    /// Get the character's current facing direction based on scale
+    /// </summary>
+    /// <returns>1 for right, -1 for left</returns>
+    private int GetCurrentFacingDirection()
+    {
+        return transform.localScale.x > 0 ? 1 : -1;
+    }
+    
+    /// <summary>
+    /// Flip the character by inverting the X scale
+    /// </summary>
+    private void FlipCharacter()
+    {
+        Vector3 newScale = transform.localScale;
+        newScale.x *= -1;
+        transform.localScale = newScale;
+    }
+    
+    /// <summary>
+    /// Manually set the character to face a specific direction
+    /// </summary>
+    /// <param name="direction">1 for right, -1 for left</param>
+    public void SetFacingDirection(int direction)
+    {
+        direction = direction > 0 ? 1 : -1; // Clamp to 1 or -1
+        
+        if (GetCurrentFacingDirection() != direction)
+        {
+            FlipCharacter();
+        }
+    }
+    
+    /// <summary>
+    /// Force end dialogue - emergency method to fix softlock issues
+    /// </summary>
+    public void ForceEndDialogue()
+    {
+        if (dialogueManager != null)
+        {
+            dialogueManager.EndDialogue();
+        }
+        
+        // Reset character animation
+        SetCharacterTalkingAnimation(false);
+        
+        // Re-enable player input
+        if (playerController != null)
+        {
+            playerController.SetInputEnabled(true);
+            hasDisabledInput = false;
+        }
+        
+        // Force update UI state
+        Canvas.ForceUpdateCanvases();
     }
     
     /// <summary>

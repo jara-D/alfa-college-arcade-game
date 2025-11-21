@@ -625,6 +625,9 @@ public class PowerTerminalMinigame : MonoBehaviour
         if (transitionImage != null)
         {
             transitionImage.SetActive(true);
+            
+            // Use Invoke instead of coroutines - more reliable for simple delays
+            Invoke(nameof(DeactivateTransitionImage), 1.5f);
         }
         
         // Start the timeline IMMEDIATELY (no delay)
@@ -675,14 +678,19 @@ public class PowerTerminalMinigame : MonoBehaviour
         }
         
         // Calculate remaining timeline duration
-        float timelineStarted = Time.time;
         float totalDuration = (float)completionTimeline.duration;
-        float elapsedTime = Time.time - timelineStarted;
-        float remainingDuration = totalDuration - elapsedTime;
         
-        if (remainingDuration > 0)
+        // Wait for a shorter time - we don't need the full timeline for the transition effect
+        float transitionDuration = Mathf.Min(totalDuration, 2f); // Max 2 seconds or timeline duration
+        
+        if (transitionDuration > 0)
         {
-            yield return new WaitForSeconds(remainingDuration);
+            yield return new WaitForSeconds(transitionDuration);
+        }
+        else
+        {
+            // Fallback: wait 1.5 seconds if timeline duration is invalid
+            yield return new WaitForSeconds(1.5f);
         }
         
         // Deactivate the transition image
@@ -691,7 +699,34 @@ public class PowerTerminalMinigame : MonoBehaviour
             transitionImage.SetActive(false);
         }
         
+        // Additional backup - use Invoke as well
+        Invoke(nameof(DeactivateTransitionImage), 0.1f);
+        
         // Now close the minigame
         CloseMinigame();
+    }
+    
+    /// <summary>
+    /// Deactivate transition image - called via Invoke for reliability
+    /// </summary>
+    private void DeactivateTransitionImage()
+    {
+        if (transitionImage != null && transitionImage.activeInHierarchy)
+        {
+            transitionImage.SetActive(false);
+        }
+    }
+    
+    /// <summary>
+    /// Backup method to ensure transition image gets deactivated even if main timeline completion fails
+    /// </summary>
+    private System.Collections.IEnumerator DeactivateTransitionImageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        if (transitionImage != null && transitionImage.activeInHierarchy)
+        {
+            transitionImage.SetActive(false);
+        }
     }
 }
