@@ -147,7 +147,19 @@ public class TilemapChanger : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private bool showDebugLogs = true;
     
+    [Header("Performance")]
+    [Tooltip("Preload all prefabs at start to avoid lag spikes during gameplay")]
+    [SerializeField] private bool preloadPrefabs = true;
+    
     private bool hasChangedTiles = false;
+    
+    // Dictionary to store preloaded prefabs: position -> instantiated GameObject
+    private Dictionary<Vector3Int, GameObject> preloadedPrefabs = new Dictionary<Vector3Int, GameObject>();
+    
+    // Precomputed tile change data for instant execution
+    private List<Vector3Int> tilePositionsToChange = new List<Vector3Int>();
+    private List<TileBase> newTilesForPositions = new List<TileBase>();
+    private List<TileBase> oldTilesForPositions = new List<TileBase>();
     
     void Start()
     {
@@ -171,10 +183,98 @@ public class TilemapChanger : MonoBehaviour
             InvokeRepeating(nameof(CheckTerminalStatus), 1f, checkInterval);
         }
         
+        // Preload prefabs to avoid lag spikes during gameplay
+        if (preloadPrefabs)
+        {
+            PreloadAllPrefabs();
+        }
+
         if (showDebugLogs)
         {
             Debug.Log($"TilemapChanger initialized with {tileMappings.Count} tile mappings on tilemap: {targetTilemap.name}");
         }
+    }
+    
+    /// <summary>
+    /// Preload all prefabs that will be needed, but keep them disabled
+    /// Also precompute tile change positions for instant execution
+    /// </summary>
+    private void PreloadAllPrefabs()
+    {
+        if (targetTilemap == null || tileMappings == null || tileMappings.Count == 0)
+        {
+            return;
+        }
+        
+        Debug.Log($"=== PRELOADING PREFABS AND PRECOMPUTING TILE CHANGES ===");
+        
+        BoundsInt bounds = targetTilemap.cellBounds;
+        int preloadedCount = 0;
+        int precomputedTileCount = 0;
+        
+        // Clear previous precomputed data
+        tilePositionsToChange.Clear();
+        newTilesForPositions.Clear();
+        oldTilesForPositions.Clear();
+        
+        // Iterate through all tiles in the tilemap
+        foreach (Vector3Int position in bounds.allPositionsWithin)
+        {
+            TileBase currentTile = targetTilemap.GetTile(position);
+            
+            if (currentTile != null)
+            {
+                // Check each mapping to see if this tile will need changes
+                foreach (TileMapping mapping in tileMappings)
+                {
+                    if (mapping.IsValid())
+                    {
+                        TileBase defaultTile = mapping.GetDefaultTile();
+                        
+                        // If this tile matches a mapping
+                        if (defaultTile != null && currentTile.name == defaultTile.name)
+                        {
+                            if (mapping.coloredPrefab != null)
+                            {
+                                // Preload prefab for this position
+                                Vector3 worldPosition = targetTilemap.CellToWorld(position);
+                                worldPosition.x += targetTilemap.cellSize.x * 0.5f;
+                                worldPosition.y += targetTilemap.cellSize.y * 0.5f;
+                                
+                                GameObject preloadedPrefab = Instantiate(mapping.coloredPrefab, worldPosition, Quaternion.identity);
+                                preloadedPrefab.transform.SetParent(transform);
+                                preloadedPrefab.SetActive(false);
+                                
+                                preloadedPrefabs[position] = preloadedPrefab;
+                                preloadedCount++;
+                                
+                                if (showDebugLogs && preloadedCount <= 3) // Limit debug spam
+                                {
+                                    Debug.Log($"Preloaded prefab {mapping.coloredPrefab.name} at {position}");
+                                }
+                            }
+                            else if (mapping.coloredTile != null)
+                            {
+                                // Precompute tile change data
+                                tilePositionsToChange.Add(position);
+                                newTilesForPositions.Add(mapping.coloredTile);
+                                oldTilesForPositions.Add(currentTile);
+                                precomputedTileCount++;
+                                
+                                if (showDebugLogs && precomputedTileCount <= 3) // Limit debug spam
+                                {
+                                    Debug.Log($"Precomputed tile change at {position}: {currentTile.name} -> {mapping.coloredTile.name}");
+                                }
+                            }
+                            
+                            break; // Found a match, no need to check other mappings
+                        }
+                    }
+                }
+            }
+        }
+        
+        Debug.Log($"=== PRELOADING COMPLETE: {preloadedCount} prefabs preloaded, {precomputedTileCount} tile changes precomputed ===");
     }
     
 
@@ -200,7 +300,7 @@ public class TilemapChanger : MonoBehaviour
     }
     
     /// <summary>
-    /// Manually trigger the tile change (useful for testing or other triggers)
+    /// Instantly trigger the tile change using precomputed data (no lag!)
     /// </summary>
     [ContextMenu("Change Tiles to Colored")]
     public void ChangeTilesToColored()
@@ -211,161 +311,46 @@ public class TilemapChanger : MonoBehaviour
             return;
         }
         
-        if (tileMappings == null || tileMappings.Count == 0)
-        {
-            Debug.LogWarning("TilemapChanger: No tile mappings configured!");
-            return;
-        }
-        
-        Debug.Log($"=== STARTING TILE CHANGE PROCESS ===");
-        Debug.Log($"Tilemap: {targetTilemap.name}");
-        Debug.Log($"Available mappings: {tileMappings.Count}");
-        
-        // Log all available mappings
-        foreach (var mapping in tileMappings)
-        {
-            Debug.Log($"Mapping: {mapping.GetDescription()}");
-        }
+        Debug.Log($"=== INSTANT TILE CHANGE PROCESS ===");
         
         int changedTileCount = 0;
-        int totalTilesChecked = 0;
         
-        // Get the bounds of the tilemap
-        BoundsInt bounds = targetTilemap.cellBounds;
-        Debug.Log($"Tilemap bounds: {bounds}");
-        
-        // Create arrays to store positions and new tiles
-        List<Vector3Int> positionsToChange = new List<Vector3Int>();
-        List<TileBase> newTiles = new List<TileBase>();
-        List<TileBase> oldTiles = new List<TileBase>();
-        
-        // Iterate through all tiles in the tilemap
-        foreach (Vector3Int position in bounds.allPositionsWithin)
+        // Step 1: Apply precomputed tile changes using batch operation
+        if (tilePositionsToChange.Count > 0)
         {
-            TileBase currentTile = targetTilemap.GetTile(position);
-            totalTilesChecked++;
+            targetTilemap.SetTilesBlock(new BoundsInt(0, 0, 0, 1, 1, 1), new TileBase[0]); // Clear any cache
             
-            if (currentTile != null)
+            // Use SetTiles for batch operation - much faster than individual SetTile calls
+            TileBase[] tilesToSet = newTilesForPositions.ToArray();
+            Vector3Int[] positionsArray = tilePositionsToChange.ToArray();
+            
+            targetTilemap.SetTiles(positionsArray, tilesToSet);
+            changedTileCount += tilePositionsToChange.Count;
+            
+            Debug.Log($"✓ BATCH APPLIED: {tilePositionsToChange.Count} tiles changed instantly");
+        }
+        
+        // Step 2: Activate preloaded prefabs (remove tiles first)
+        foreach (var kvp in preloadedPrefabs)
+        {
+            Vector3Int position = kvp.Key;
+            GameObject prefab = kvp.Value;
+            
+            if (prefab != null)
             {
-                // Debug every tile found
-                if (showDebugLogs && totalTilesChecked <= 10) // Limit initial debug spam
-                {
-                    Debug.Log($"Found tile at {position}: {currentTile.name} (Type: {currentTile.GetType().Name})");
-                }
-                
-                // Check each mapping to see if this tile should be replaced
-                foreach (TileMapping mapping in tileMappings)
-                {
-                    if (mapping.IsValid())
-                    {
-                        // Check if current tile matches the default tile in this mapping
-                        TileBase defaultTile = mapping.GetDefaultTile();
-                        
-                        if (defaultTile != null && currentTile.name == defaultTile.name)
-                        {
-                            // Determine if we're going to a tile or a prefab
-                            if (mapping.coloredTile != null)
-                            {
-                                // TileBase to TileBase conversion
-                                positionsToChange.Add(position);
-                                newTiles.Add(mapping.coloredTile);
-                                oldTiles.Add(currentTile);
-                                changedTileCount++;
-                                
-                                Debug.Log($"✓ MATCH FOUND at {position}: {currentTile.name} -> {mapping.coloredTile.name}");
-                            }
-                            else if (mapping.coloredPrefab != null)
-                            {
-                                // TileBase to Prefab conversion - remove tile and instantiate prefab
-                                try
-                                {
-                                    // Remove the tile first
-                                    targetTilemap.SetTile(position, null);
-                                    
-                                    // Convert tile position to world position
-                                    Vector3 worldPosition = targetTilemap.CellToWorld(position);
-                                    
-                                    // Adjust position to center of tile
-                                    worldPosition.x += targetTilemap.cellSize.x * 0.5f;
-                                    worldPosition.y += targetTilemap.cellSize.y * 0.5f;
-                                    
-                                    // Instantiate the prefab at the world position
-                                    GameObject instantiatedPrefab = Instantiate(mapping.coloredPrefab, worldPosition, Quaternion.identity);
-                                    
-                                    // Parent it to this transform for organization
-                                    instantiatedPrefab.transform.SetParent(transform);
-                                    
-                                    changedTileCount++;
-                                    
-                                    Debug.Log($"✓ PREFAB INSTANTIATED at {position}: Removed {currentTile.name}, instantiated {mapping.coloredPrefab.name}");
-                                }
-                                catch (System.Exception e)
-                                {
-                                    Debug.LogError($"✗ EXCEPTION instantiating prefab at {position}: {e.Message}");
-                                }
-                            }
-                            
-                            break; // Found a match, no need to check other mappings
-                        }
-                    }
-                }
+                // Remove the tile and activate the prefab
+                targetTilemap.SetTile(position, null);
+                prefab.SetActive(true);
+                changedTileCount++;
             }
         }
         
-        Debug.Log($"=== SCAN COMPLETE ===");
-        Debug.Log($"Total tiles checked: {totalTilesChecked}");
-        Debug.Log($"Tiles to change: {changedTileCount}");
-        
-        // Apply all tile changes
-        if (positionsToChange.Count > 0)
+        if (preloadedPrefabs.Count > 0)
         {
-            Debug.Log($"=== APPLYING {positionsToChange.Count} TILE CHANGES ===");
-            
-            for (int i = 0; i < positionsToChange.Count; i++)
-            {
-                Vector3Int pos = positionsToChange[i];
-                TileBase oldTile = oldTiles[i];
-                TileBase newTile = newTiles[i];
-                
-                Debug.Log($"Changing tile {i+1}/{positionsToChange.Count} at {pos}: {oldTile.name} -> {newTile.name}");
-                
-                try
-                {
-                    // Store what was there before
-                    TileBase beforeChange = targetTilemap.GetTile(pos);
-                    
-                    // Apply the change
-                    targetTilemap.SetTile(pos, newTile);
-                    
-                    // Verify the change worked
-                    TileBase afterChange = targetTilemap.GetTile(pos);
-                    
-                    if (afterChange == newTile)
-                    {
-                        Debug.Log($"✓ SUCCESS: Tile at {pos} changed to {afterChange?.name ?? "null"}");
-                    }
-                    else if (afterChange == beforeChange)
-                    {
-                        Debug.LogError($"✗ FAILED: Tile at {pos} remained {afterChange?.name ?? "null"} (SetTile had no effect)");
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"? UNEXPECTED: Tile at {pos} became {afterChange?.name ?? "null"} instead of {newTile?.name ?? "null"}");
-                    }
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogError($"✗ EXCEPTION setting tile at {pos}: {e.Message}\nStack: {e.StackTrace}");
-                }
-            }
-        }
-        else
-        {
-            Debug.LogWarning("No tiles were scheduled for changes. Check your tile mappings.");
+            Debug.Log($"✓ PREFABS ACTIVATED: {preloadedPrefabs.Count} prefabs activated instantly");
         }
         
-        Debug.Log($"=== TILE CHANGE PROCESS COMPLETE ===");
-        Debug.Log($"Changed {changedTileCount} tiles to their colored versions");
+        Debug.Log($"=== INSTANT CHANGE COMPLETE: {changedTileCount} total changes applied ===");
         
         hasChangedTiles = true;
     }
@@ -439,68 +424,92 @@ public class TilemapChanger : MonoBehaviour
             return;
         }
         
-        if (tileMappings == null || tileMappings.Count == 0)
-        {
-            Debug.LogWarning("TilemapChanger: No tile mappings configured!");
-            return;
-        }
+        Debug.Log($"=== RESETTING TILES TO DEFAULT ===");
         
         int changedTileCount = 0;
+        int disabledPrefabCount = 0;
+        int destroyedPrefabCount = 0;
         
-        // Get the bounds of the tilemap
-        BoundsInt bounds = targetTilemap.cellBounds;
-        
-        // Create arrays to store positions and new tiles
-        List<Vector3Int> positionsToChange = new List<Vector3Int>();
-        List<TileBase> newTiles = new List<TileBase>();
-        
-        // Also destroy any instantiated prefabs (children of this transform)
-        int destroyedPrefabs = 0;
-        for (int i = transform.childCount - 1; i >= 0; i--)
+        // First, disable all preloaded prefabs
+        foreach (var kvp in preloadedPrefabs)
         {
-            DestroyImmediate(transform.GetChild(i).gameObject);
-            destroyedPrefabs++;
+            if (kvp.Value != null)
+            {
+                kvp.Value.SetActive(false);
+                disabledPrefabCount++;
+            }
         }
         
-        // Iterate through all tiles in the tilemap
-        foreach (Vector3Int position in bounds.allPositionsWithin)
+        if (tileMappings != null && tileMappings.Count > 0)
         {
-            TileBase currentTile = targetTilemap.GetTile(position);
+            // Get the bounds of the tilemap
+            BoundsInt bounds = targetTilemap.cellBounds;
             
-            if (currentTile != null)
+            // Create arrays to store positions and new tiles
+            List<Vector3Int> positionsToChange = new List<Vector3Int>();
+            List<TileBase> newTiles = new List<TileBase>();
+            
+            // Also destroy any non-preloaded instantiated prefabs (children of this transform that aren't in our preloaded dictionary)
+            for (int i = transform.childCount - 1; i >= 0; i--)
             {
-                // Check each mapping to see if this colored tile should be reset to default
-                foreach (TileMapping mapping in tileMappings)
+                GameObject child = transform.GetChild(i).gameObject;
+                
+                // Check if this child is one of our preloaded prefabs
+                bool isPreloaded = false;
+                foreach (var kvp in preloadedPrefabs)
                 {
-                    if (mapping.IsValid())
+                    if (kvp.Value == child)
                     {
-                        // Check if current tile matches the colored tile in this mapping
-                        if (mapping.coloredTile != null && currentTile.name == mapping.coloredTile.name)
+                        isPreloaded = true;
+                        break;
+                    }
+                }
+                
+                // If it's not preloaded, destroy it (it was instantiated during runtime)
+                if (!isPreloaded)
+                {
+                    DestroyImmediate(child);
+                    destroyedPrefabCount++;
+                }
+            }
+            
+            // Iterate through all tiles in the tilemap to reset colored tiles back to default
+            foreach (Vector3Int position in bounds.allPositionsWithin)
+            {
+                TileBase currentTile = targetTilemap.GetTile(position);
+                
+                if (currentTile != null)
+                {
+                    // Check each mapping to see if this colored tile should be reset to default
+                    foreach (TileMapping mapping in tileMappings)
+                    {
+                        if (mapping.IsValid())
                         {
-                            TileBase defaultTile = mapping.GetDefaultTile();
-                            if (defaultTile != null)
+                            // Check if current tile matches the colored tile in this mapping
+                            if (mapping.coloredTile != null && currentTile.name == mapping.coloredTile.name)
                             {
-                                positionsToChange.Add(position);
-                                newTiles.Add(defaultTile);
-                                changedTileCount++;
+                                TileBase defaultTile = mapping.GetDefaultTile();
+                                if (defaultTile != null)
+                                {
+                                    positionsToChange.Add(position);
+                                    newTiles.Add(defaultTile);
+                                    changedTileCount++;
+                                }
+                                break; // Found a match, no need to check other mappings
                             }
-                            break; // Found a match, no need to check other mappings
                         }
                     }
                 }
             }
+            
+            // Apply all tile changes at once
+            for (int i = 0; i < positionsToChange.Count; i++)
+            {
+                targetTilemap.SetTile(positionsToChange[i], newTiles[i]);
+            }
         }
         
-        // Apply all tile changes at once
-        for (int i = 0; i < positionsToChange.Count; i++)
-        {
-            targetTilemap.SetTile(positionsToChange[i], newTiles[i]);
-        }
-        
-        if (showDebugLogs)
-        {
-            Debug.Log($"TilemapChanger: Reset {changedTileCount} tiles to their default versions and destroyed {destroyedPrefabs} instantiated prefabs");
-        }
+        Debug.Log($"=== RESET COMPLETE: {changedTileCount} tiles reset, {disabledPrefabCount} prefabs disabled, {destroyedPrefabCount} runtime prefabs destroyed ===");
         
         hasChangedTiles = false;
         
