@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Carlo talking
+  m_Name: Johan talking
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1146116238081801385, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
+      value: {fileID: -8314784668355147510, guid: 482036f332179994789aa591c51cae15, type: 3}
     - time: 0.41666666
-      value: {fileID: 4270612646821330594, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
+      value: {fileID: 6417485506613573038, guid: 482036f332179994789aa591c51cae15, type: 3}
     - time: 0.8333333
-      value: {fileID: -1146116238081801385, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
+      value: {fileID: -8314784668355147510, guid: 482036f332179994789aa591c51cae15, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1146116238081801385, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
-    - {fileID: 4270612646821330594, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
-    - {fileID: -1146116238081801385, guid: 387c0b0826905b44890f7bc8f9cfbf5a, type: 3}
+    - {fileID: -8314784668355147510, guid: 482036f332179994789aa591c51cae15, type: 3}
+    - {fileID: 6417485506613573038, guid: 482036f332179994789aa591c51cae15, type: 3}
+    - {fileID: -8314784668355147510, guid: 482036f332179994789aa591c51cae15, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

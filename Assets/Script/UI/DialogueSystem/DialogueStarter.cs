@@ -25,6 +25,51 @@ public class DialogueStarter : MonoBehaviour
     [Header("Fallback Dialogue (if no DialogueData is assigned)")]
     public bool useFallbackDialogue = true;
     
+    [Header("Character Selection")]
+    [Tooltip("Select which character this dialogue starter represents")]
+    public bool Ids = false;
+    public bool Johan = false;
+    public bool Christiaan = false;
+    public bool Carlo = false;
+    public bool Maik = false;
+    public bool Sjoerd = false;
+    [SerializeField] private bool EvilIds = false; // Using SerializeField with different name for "Evil Ids"
+    
+    [Header("Character Animations")]
+    [Tooltip("Animation booleans for each character")]
+    // Ids animations
+    public string IdsIdle = "IdsIdle";
+    public string IdsTalking = "IdsTalking";
+    
+    // Johan animations (has 3: idle, talking, knee)
+    public string JohanIdle = "JohanIdle";
+    public string JohanTalking = "JohanTalking";
+    public string JohanKnee = "JohanKnee";
+    
+    // Christiaan animations
+    public string ChristiaanIdle = "ChristiaanIdle";
+    public string ChristiaanTalking = "ChristiaanTalking";
+    
+    // Carlo animations
+    public string CarloIdle = "CarloIdle";
+    public string CarloTalking = "CarloTalking";
+    
+    // Maik animations
+    public string MaikIdle = "MaikIdle";
+    public string MaikTalking = "MaikTalking";
+    
+    // Sjoerd animations
+    public string SjoerdIdle = "SjoerdIdle";
+    public string SjoerdTalking = "SjoerdTalking";
+    
+    // Evil Ids animations
+    public string EvilIdsIdle = "EvilIdsIdle";
+    public string EvilIdsTalking = "EvilIdsTalking";
+    
+    [Header("Animator Component")]
+    [Tooltip("Animator component to control character animations")]
+    public Animator characterAnimator;
+    
     private bool isPlayerInRange = false;
     private PlayerController playerController;
     private bool hasDisabledInput = false; // Track if we've disabled input for this dialogue
@@ -52,6 +97,9 @@ public class DialogueStarter : MonoBehaviour
         
         // Find the PlayerController in the scene
         playerController = FindFirstObjectByType<PlayerController>();
+        
+        // Set idle animation for the selected character
+        SetCharacterIdleAnimation();
     }
     
     void OnDestroy()
@@ -78,6 +126,9 @@ public class DialogueStarter : MonoBehaviour
             // If dialogue has ended, re-enable player input (only once)
             if (!dialogueManager.IsDialogueActive)
             {
+                // Set character back to idle animation (this will reset talking animation)
+                SetCharacterTalkingAnimation(false);
+                
                 playerController.SetInputEnabled(true);
                 hasDisabledInput = false; // Reset flag so we don't keep enabling input
             }
@@ -97,8 +148,19 @@ public class DialogueStarter : MonoBehaviour
                 hasDisabledInput = true;
             }
             
-            dialogueManager.StartDialogue(dialogueNodes);
-            ActivatePanels();
+            // Handle Johan's special knee animation before talking
+            if (Johan)
+            {
+                StartCoroutine(JohanDialogueSequence(dialogueNodes));
+            }
+            else
+            {
+                // Set talking animation for other characters
+                SetCharacterTalkingAnimation(true);
+                dialogueManager.StartDialogue(dialogueNodes);
+                // Activate panels after starting dialogue for other characters
+                ActivatePanels();
+            }
         }
         else
         {
@@ -148,15 +210,27 @@ public class DialogueStarter : MonoBehaviour
         {
             DialogueTextContainer.SetActive(true);
         }
+        else
+        {
+            Debug.LogWarning("DialogueTextContainer is null on " + gameObject.name);
+        }
 
         if (choicesContainer != null)
         {
             choicesContainer.SetActive(true);
         }
+        else
+        {
+            Debug.LogWarning("ChoicesContainer is null on " + gameObject.name);
+        }
         
         if (xButton != null)
         {
             xButton.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("XButton is null on " + gameObject.name);
         }
     }
 
@@ -176,6 +250,187 @@ public class DialogueStarter : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set the idle animation for the selected character
+    /// </summary>
+    private void SetCharacterIdleAnimation()
+    {
+        if (characterAnimator == null) return;
+        
+        // Reset all animation bools to false first
+        ResetAllAnimations();
+        
+        // Set the appropriate idle animation based on selected character
+        if (Ids)
+        {
+            characterAnimator.SetBool(IdsIdle, true);
+        }
+        else if (Johan)
+        {
+            characterAnimator.SetBool(JohanIdle, true);
+        }
+        else if (Christiaan)
+        {
+            characterAnimator.SetBool(ChristiaanIdle, true);
+        }
+        else if (Carlo)
+        {
+            characterAnimator.SetBool(CarloIdle, true);
+        }
+        else if (Maik)
+        {
+            characterAnimator.SetBool(MaikIdle, true);
+        }
+        else if (Sjoerd)
+        {
+            characterAnimator.SetBool(SjoerdIdle, true);
+        }
+        else if (EvilIds)
+        {
+            characterAnimator.SetBool(EvilIdsIdle, true);
+        }
+    }
+    
+    /// <summary>
+    /// Coroutine to handle Johan's knee animation sequence before dialogue
+    /// </summary>
+    /// <param name="dialogueNodes">The dialogue to start after knee animation</param>
+    private System.Collections.IEnumerator JohanDialogueSequence(List<DialogueNode> dialogueNodes)
+    {
+        if (characterAnimator != null)
+        {
+            // Reset all animations and start knee animation
+            ResetAllAnimations();
+            characterAnimator.SetBool(JohanKnee, true);
+        }
+        
+        // Wait for 0.5 seconds
+        yield return new WaitForSeconds(0.5f);
+        
+        if (characterAnimator != null)
+        {
+            // Switch to talking animation
+            ResetAllAnimations();
+            characterAnimator.SetBool(JohanTalking, true);
+        }
+        
+        // Start dialogue and activate panels
+        dialogueManager.StartDialogue(dialogueNodes);
+        ActivatePanels();
+    }
+
+    /// <summary>
+    /// Set the appropriate animation state for the selected character
+    /// </summary>
+    /// <param name="isTalking">True for talking animation, false for idle animation</param>
+    private void SetCharacterTalkingAnimation(bool isTalking)
+    {
+        if (characterAnimator == null) return;
+        
+        // Reset all animations first to prevent conflicts
+        ResetAllAnimations();
+        
+        // Set the appropriate animation based on selected character
+        if (Ids)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(IdsTalking, true);
+            else
+                characterAnimator.SetBool(IdsIdle, true);
+        }
+        else if (Johan)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(JohanTalking, true);
+            else
+                characterAnimator.SetBool(JohanIdle, true);
+        }
+        else if (Christiaan)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(ChristiaanTalking, true);
+            else
+                characterAnimator.SetBool(ChristiaanIdle, true);
+        }
+        else if (Carlo)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(CarloTalking, true);
+            else
+                characterAnimator.SetBool(CarloIdle, true);
+        }
+        else if (Maik)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(MaikTalking, true);
+            else
+                characterAnimator.SetBool(MaikIdle, true);
+        }
+        else if (Sjoerd)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(SjoerdTalking, true);
+            else
+                characterAnimator.SetBool(SjoerdIdle, true);
+        }
+        else if (EvilIds)
+        {
+            if (isTalking)
+                characterAnimator.SetBool(EvilIdsTalking, true);
+            else
+                characterAnimator.SetBool(EvilIdsIdle, true);
+        }
+    }
+    
+    /// <summary>
+    /// Reset all character animation bools to false
+    /// </summary>
+    private void ResetAllAnimations()
+    {
+        if (characterAnimator == null) return;
+        
+        // Reset Ids animations
+        characterAnimator.SetBool(IdsIdle, false);
+        characterAnimator.SetBool(IdsTalking, false);
+        
+        // Reset Johan animations
+        characterAnimator.SetBool(JohanIdle, false);
+        characterAnimator.SetBool(JohanTalking, false);
+        characterAnimator.SetBool(JohanKnee, false);
+        
+        // Reset Christiaan animations
+        characterAnimator.SetBool(ChristiaanIdle, false);
+        characterAnimator.SetBool(ChristiaanTalking, false);
+        
+        // Reset Carlo animations
+        characterAnimator.SetBool(CarloIdle, false);
+        characterAnimator.SetBool(CarloTalking, false);
+        
+        // Reset Maik animations
+        characterAnimator.SetBool(MaikIdle, false);
+        characterAnimator.SetBool(MaikTalking, false);
+        
+        // Reset Sjoerd animations
+        characterAnimator.SetBool(SjoerdIdle, false);
+        characterAnimator.SetBool(SjoerdTalking, false);
+        
+        // Reset Evil Ids animations
+        characterAnimator.SetBool(EvilIdsIdle, false);
+        characterAnimator.SetBool(EvilIdsTalking, false);
+    }
+    
+    /// <summary>
+    /// Trigger Johan's knee animation specifically
+    /// </summary>
+    public void TriggerJohanKneeAnimation()
+    {
+        if (characterAnimator != null && Johan)
+        {
+            ResetAllAnimations();
+            characterAnimator.SetBool(JohanKnee, true);
+        }
+    }
+    
     /// <summary>
     /// Switch to a different dialogue at runtime
     /// </summary>

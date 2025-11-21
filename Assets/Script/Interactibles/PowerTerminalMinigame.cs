@@ -1,7 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public class CodePuzzle
@@ -51,6 +54,21 @@ public class PowerTerminalMinigame : MonoBehaviour
     [Tooltip("Background GameObject to activate when all terminals are completed")]
     [SerializeField] private GameObject backgroundToActivate;
     
+    [Header("Fog Control")]
+    [Tooltip("Fog GameObjects to disable when all terminals are completed")]
+    [SerializeField] private GameObject fogObject1;
+    [SerializeField] private GameObject fogObject2;
+    
+    [Header("Timeline Control")]
+    [Tooltip("PlayableDirector to control the timeline animation")]
+    [SerializeField] private PlayableDirector timelineDirector;
+    
+    [Tooltip("TimelineAsset to play when all terminals are completed")]
+    [SerializeField] private TimelineAsset completionTimeline;
+    
+    [Tooltip("Image GameObject that gets animated by the timeline (will be activated/deactivated)")]
+    [SerializeField] private GameObject transitionImage;
+    
     private CodePuzzle currentPuzzle;
     [Header("Player Control")]
     private PlayerController playerController;
@@ -58,6 +76,7 @@ public class PowerTerminalMinigame : MonoBehaviour
     
     private bool isMinigameActive = false;
     private bool isInitialized = false;
+    private bool timelineStartedForFinalTerminal = false;
     
     void Start()
     {
@@ -221,33 +240,101 @@ public class PowerTerminalMinigame : MonoBehaviour
     
     private void OnPuzzleSolved()
     {
-        // Mark the terminal as solved
+        // Mark the terminal as solved FIRST
         if (currentTerminalID < puzzlesSolved.Count)
         {
             puzzlesSolved[currentTerminalID] = true;
         }
         
-        if (feedbackText != null)
+        // NOW check if this makes all terminals completed
+        bool willBeAllCompleted = true;
+        int completedCount = 0;
+        for (int i = 0; i < totalTerminals; i++)
         {
-            feedbackText.text = "✓ Code Corrected! Terminal Activating...";
-            feedbackText.color = Color.green;
+            if (i < puzzlesSolved.Count && puzzlesSolved[i])
+            {
+                completedCount++;
+            }
+            else
+            {
+                willBeAllCompleted = false;
+            }
         }
         
-        // Close minigame panel and activate terminal
+        if (willBeAllCompleted)
+        {
+            // This is the final terminal - make panel invisible IMMEDIATELY
+            MakePanelInvisible();
+            
+            // Start timeline IMMEDIATELY while panel is invisible but still active
+            if (timelineDirector != null && completionTimeline != null)
+            {
+                // Check if timeline is already playing
+                if (timelineDirector.state != PlayState.Playing && !timelineStartedForFinalTerminal)
+                {
+                    timelineStartedForFinalTerminal = true;
+                    StartCoroutine(PlayCompletionTimelineWithEffects());
+                }
+            }
+            
+            if (feedbackText != null)
+            {
+                feedbackText.text = "✓ All Terminals Activated! System Online...";
+                feedbackText.color = Color.green;
+            }
+        }
+        else
+        {
+            if (feedbackText != null)
+            {
+                feedbackText.text = "✓ Code Corrected! Terminal Activating...";
+                feedbackText.color = Color.green;
+            }
+        }
+        
+        // Continue with normal completion sequence
         Invoke(nameof(CompletePuzzle), 1.5f);
     }
     
     private void CompletePuzzle()
     {
-        CloseMinigame();
+        // Check if this will be the final terminal before activating it
+        bool willBeAllCompleted = true;
+        int completedCount = 0;
         
-        // Activate the terminal
-        if (currentPowerTerminal != null)
+        for (int i = 0; i < totalTerminals; i++)
         {
-            currentPowerTerminal.OnMinigameComplete();
+            if (i < puzzlesSolved.Count && puzzlesSolved[i])
+            {
+                completedCount++;
+            }
+            else
+            {
+                willBeAllCompleted = false;
+            }
         }
         
-        CheckAllTerminalsCompleted();
+        if (willBeAllCompleted)
+        {
+            // This is the final terminal - timeline already started in OnPuzzleSolved, just activate terminal
+            if (currentPowerTerminal != null)
+            {
+                currentPowerTerminal.OnMinigameComplete();
+            }
+        }
+        else
+        {
+            // Regular terminal completion - normal close
+            CloseMinigame();
+            
+            // Activate the terminal
+            if (currentPowerTerminal != null)
+            {
+                currentPowerTerminal.OnMinigameComplete();
+            }
+            
+            CheckAllTerminalsCompleted();
+        }
     }
     
     private void OnPuzzleFailed()
@@ -267,6 +354,42 @@ public class PowerTerminalMinigame : MonoBehaviour
         {
             feedbackText.text = "";
         }
+    }
+    
+    /// <summary>
+    /// Make the panel invisible by setting alpha to 0 and clearing text, but keep it active for timeline execution
+    /// </summary>
+    private void MakePanelInvisible()
+    {
+        if (minigamePanel != null)
+        {
+            // Set panel alpha to 0
+            CanvasGroup canvasGroup = minigamePanel.GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                canvasGroup = minigamePanel.AddComponent<CanvasGroup>();
+            }
+            
+            canvasGroup.alpha = 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+        }
+        
+        // Clear all text fields
+        if (feedbackText != null)
+            feedbackText.text = "";
+            
+        if (hintText != null)
+            hintText.text = "";
+            
+        if (puzzleNameText != null)
+            puzzleNameText.text = "";
+            
+        if (codeInputField != null)
+            codeInputField.text = "";
+        
+        // Re-enable player controls immediately since panel is invisible
+        EnablePlayerControls();
     }
     
     private void ShowAlreadySolvedMessage()
@@ -292,21 +415,17 @@ public class PowerTerminalMinigame : MonoBehaviour
         
         if (allSolved)
         {
-            OnAllTerminalsCompleted();
+            TriggerAllCompletionEffects();
         }
     }
     
-    private void OnAllTerminalsCompleted()
+    private void TriggerAllCompletionEffects()
     {
-        Debug.Log("🎉 ALL TERMINALS ACTIVATED! OBJECTIVE COMPLETED!");
-        
         // Find and trigger all TilemapChanger scripts to change tiles to colored versions
         TilemapChanger[] tilemapChangers = FindObjectsByType<TilemapChanger>(FindObjectsSortMode.None);
         
         if (tilemapChangers.Length > 0)
         {
-            Debug.Log($"Found {tilemapChangers.Length} TilemapChanger(s). Changing tiles to colored versions...");
-            
             foreach (TilemapChanger tilemapChanger in tilemapChangers)
             {
                 if (tilemapChanger != null)
@@ -314,10 +433,6 @@ public class PowerTerminalMinigame : MonoBehaviour
                     tilemapChanger.ChangeTilesToColored();
                 }
             }
-        }
-        else
-        {
-            Debug.Log("No TilemapChanger scripts found in the scene.");
         }
         
         // Control global lighting
@@ -327,11 +442,17 @@ public class PowerTerminalMinigame : MonoBehaviour
         if (backgroundToActivate != null)
         {
             backgroundToActivate.SetActive(true);
-            Debug.Log("Background activated!");
         }
-        else
+        
+        // Disable fog objects if assigned
+        if (fogObject1 != null)
         {
-            Debug.Log("No background GameObject assigned to activate.");
+            fogObject1.SetActive(false);
+        }
+        
+        if (fogObject2 != null)
+        {
+            fogObject2.SetActive(false);
         }
     }
 
@@ -355,11 +476,6 @@ public class PowerTerminalMinigame : MonoBehaviour
         if (globalLight != null)
         {
             globalLight.intensity = 1f;
-            Debug.Log($"Set Global Light '{globalLight.name}' intensity to 1.0");
-        }
-        else
-        {
-            Debug.Log("No Global Light 2D found in the scene.");
         }
         
         // Disable the specified spotlight
@@ -380,11 +496,6 @@ public class PowerTerminalMinigame : MonoBehaviour
         if (spotlightToDisable != null)
         {
             spotlightToDisable.enabled = false;
-            Debug.Log($"Disabled Spotlight '{spotlightToDisable.name}'");
-        }
-        else
-        {
-            Debug.Log("No Spotlight 2D to disable found in the scene.");
         }
     }
     
@@ -394,6 +505,9 @@ public class PowerTerminalMinigame : MonoBehaviour
         {
             minigamePanel.SetActive(false);
         }
+        
+        // Reset timeline flag for next play session
+        timelineStartedForFinalTerminal = false;
         
         // Show UI again
         if (currentPowerTerminal != null)
@@ -431,7 +545,6 @@ public class PowerTerminalMinigame : MonoBehaviour
         {
             puzzlesSolved[i] = false;
         }
-        Debug.Log("All puzzles reset!");
     }
     
     private void DisablePlayerControls()
@@ -501,5 +614,84 @@ public class PowerTerminalMinigame : MonoBehaviour
     public bool IsMinigameActive()
     {
         return isMinigameActive;
+    }
+    
+    /// <summary>
+    /// Coroutine to play timeline immediately while spreading completion effects across frames to avoid lag
+    /// </summary>
+    private System.Collections.IEnumerator PlayCompletionTimelineWithEffects()
+    {
+        // Activate the transition image IMMEDIATELY
+        if (transitionImage != null)
+        {
+            transitionImage.SetActive(true);
+        }
+        
+        // Start the timeline IMMEDIATELY (no delay)
+        if (timelineDirector != null && completionTimeline != null)
+        {
+            timelineDirector.Play(completionTimeline);
+        }
+        
+        // Wait one frame to let timeline start
+        yield return null;
+        
+        // Now trigger completion effects spread across multiple frames to avoid lag
+        
+        // Frame 1: Change tiles (this is the most expensive operation)
+        TilemapChanger[] tilemapChangers = FindObjectsByType<TilemapChanger>(FindObjectsSortMode.None);
+        if (tilemapChangers.Length > 0)
+        {
+            foreach (TilemapChanger tilemapChanger in tilemapChangers)
+            {
+                if (tilemapChanger != null)
+                {
+                    tilemapChanger.ChangeTilesToColored();
+                }
+            }
+        }
+        
+        yield return null; // Wait one frame
+        
+        // Frame 2: Control lighting
+        ControlGlobalLighting();
+        
+        yield return null; // Wait one frame
+        
+        // Frame 3: Activate background and disable fog
+        if (backgroundToActivate != null)
+        {
+            backgroundToActivate.SetActive(true);
+        }
+        
+        if (fogObject1 != null)
+        {
+            fogObject1.SetActive(false);
+        }
+        
+        if (fogObject2 != null)
+        {
+            fogObject2.SetActive(false);
+        }
+        
+        // Calculate remaining timeline duration
+        float timelineStarted = Time.time;
+        float totalDuration = (float)completionTimeline.duration;
+        float elapsedTime = Time.time - timelineStarted;
+        float remainingDuration = totalDuration - elapsedTime;
+        
+        if (remainingDuration > 0)
+        {
+            yield return new WaitForSeconds(remainingDuration);
+        }
+        
+        // Deactivate the transition image
+        if (transitionImage != null)
+        {
+            transitionImage.SetActive(false);
+        }
+        
+        // Now close the minigame
+        CloseMinigame();
     }
 }
