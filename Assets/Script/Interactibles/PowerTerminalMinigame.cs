@@ -53,7 +53,8 @@ public class PowerTerminalMinigame : MonoBehaviour
     [Header("Background Activation")]
     [Tooltip("Background GameObject to activate when all terminals are completed")]
     [SerializeField] private GameObject backgroundToActivate;
-    
+    public MusicTransition musicTransition;
+
     [Header("Fog Control")]
     [Tooltip("Fog GameObjects to disable when all terminals are completed")]
     [SerializeField] private GameObject fogObject1;
@@ -77,11 +78,14 @@ public class PowerTerminalMinigame : MonoBehaviour
     private bool isMinigameActive = false;
     private bool isInitialized = false;
     private bool timelineStartedForFinalTerminal = false;
+
+    
     
     void Start()
     {
         InitializePuzzleSystem();
         SetupUI();
+        //musicTransition.ChangeClip();
     }
     
     private void InitializePuzzleSystem()
@@ -453,6 +457,8 @@ public class PowerTerminalMinigame : MonoBehaviour
         if (allSolved)
         {
             TriggerAllCompletionEffects();
+            musicTransition.ChangeClip();
+
         }
     }
     
@@ -471,7 +477,14 @@ public class PowerTerminalMinigame : MonoBehaviour
                 }
             }
         }
+
+        //musicTransition.changeBGM = true;
+
+       
         
+        
+        
+
         // Control global lighting
         ControlGlobalLighting();
         

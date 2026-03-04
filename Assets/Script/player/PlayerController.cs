@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
         _footstepTimer += Time.deltaTime;
         if (_footstepTimer >= footstepInterval)
         {
-            SoundEffectManager.Play("Footsteps", 0.4f); // slightly quieter than full volume
+            SoundManager.PlaySound(SoundType.DAMAGE); // slightly quieter than full volume
             _footstepTimer = 0f;
         }
     }
@@ -366,7 +366,8 @@ public class PlayerController : MonoBehaviour
 
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        SoundEffectManager.Play("Jump", 0.4f);
+        //SoundEffectManager.Play("Jump", 0.4f);
+        SoundManager.PlaySound(SoundType.JUMP);
         isJumping = true;
     }
     public void cutJumpShort()
@@ -444,7 +445,8 @@ public class PlayerController : MonoBehaviour
         // Set the minimum time the dash animation should stay active using the configurable duration
         dashAnimationEndTime = Time.time + dashAnimationMinDuration;
         animator.SetBool("isDashing", true);
-        SoundEffectManager.Play("Dash");
+        //SoundEffectManager.Play("Dash");
+        SoundManager.PlaySound(SoundType.DASH);
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         tr.emitting = true;

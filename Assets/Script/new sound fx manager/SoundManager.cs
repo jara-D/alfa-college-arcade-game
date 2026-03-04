@@ -27,6 +27,6 @@ public class SoundManager : MonoBehaviour
 
     public static void PlaySound(SoundType sound, float volume = 1)
     {
-
+        instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
     }
 }
